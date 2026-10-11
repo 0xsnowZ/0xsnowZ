@@ -1,300 +1,216 @@
 <svg width="830" height="260" viewBox="0 0 830 260" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <style>
-  /* Noise grain overlay flicker */
-  .grain { animation: grainShift 0.12s steps(1) infinite; }
-  @keyframes grainShift {
-    0%  { opacity: 0.04; }
-    25% { opacity: 0.07; }
-    50% { opacity: 0.03; }
-    75% { opacity: 0.06; }
-  }
-
-  /* Slow ambient glow pulse */
-  .glow-l { animation: glowPulse 8s ease-in-out infinite; }
-  .glow-r { animation: glowPulse 10s ease-in-out 2s infinite reverse; }
-  @keyframes glowPulse {
-    0%,100% { opacity: 0.45; }
-    50%      { opacity: 0.85; }
-  }
-
-  /* Border breathe */
-  .bdr-t { animation: bdrBreath 5s ease-in-out infinite alternate; }
-  .bdr-b { animation: bdrBreath 5s ease-in-out infinite alternate-reverse; }
-  @keyframes bdrBreath {
-    from { opacity: 0.4; }
-    to   { opacity: 1.0; }
-  }
-
-  /* Scan line sweep */
-  .scan { animation: scanMove 8s linear infinite; }
-  @keyframes scanMove {
-    0%   { transform: translateY(-60px); opacity: 1; }
-    85%  { opacity: 1; }
-    100% { transform: translateY(330px); opacity: 0; }
-  }
-
-  /* Corner L marks */
-  .cr { animation: crFade 4s ease-in-out infinite; }
-  @keyframes crFade {
-    0%,100% { opacity: 0.25; }
-    50%      { opacity: 0.8;  }
-  }
-
-  /* Handle flicker */
-  .handle { animation: handleIn 1s ease-out 0.2s both, handleFlicker 6s ease-in-out 3s infinite; }
-  @keyframes handleIn {
+  /* Sequential line-by-line reveal (typewriter) */
+  .l1  { animation: lineIn .12s ease 0.3s  both; }
+  .l2  { animation: lineIn .12s ease 0.7s  both; }
+  .l3  { animation: lineIn .12s ease 1.1s  both; }
+  .l4  { animation: lineIn .12s ease 1.5s  both; }
+  .l5  { animation: lineIn .12s ease 1.9s  both; }
+  .l6  { animation: lineIn .12s ease 2.3s  both; }
+  .l7  { animation: lineIn .12s ease 2.7s  both; }
+  .l8  { animation: lineIn .12s ease 3.1s  both; }
+  .l9  { animation: lineIn .12s ease 3.5s  both; }
+  .l10 { animation: lineIn .12s ease 3.9s  both; }
+  @keyframes lineIn {
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-  @keyframes handleFlicker {
-    0%,90%,100% { opacity: 1; }
-    91%          { opacity: 0.5; }
-    92%          { opacity: 1;   }
-    93%          { opacity: 0.3; }
-    94%          { opacity: 1;   }
+
+  /* Cursor blink — starts when typing finishes */
+  .cursor { animation: blink .85s step-end 4.2s infinite; }
+  @keyframes blink {
+    0%,49% { opacity: 1; }
+    50%,100%{ opacity: 0; }
   }
 
-  /* Name cinematic reveal */
-  .name { animation: nameReveal 1.8s cubic-bezier(0.16,1,0.3,1) 0.5s both; }
-  @keyframes nameReveal {
-    0%   { opacity: 0; letter-spacing: 12px; }
-    100% { opacity: 1; letter-spacing: 3px;  }
+  /* Line numbers pulse subtly */
+  .lnum { animation: lnumFade 0.15s ease 0.2s both; }
+  @keyframes lnumFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
 
-  /* Subtitle and extras */
-  .sub  { animation: fadeUp 1.2s ease-out 1.6s both; }
-  .line { animation: drawLine 1.4s ease-out 2.2s both; }
-  .mot  { animation: fadeUp 1.2s ease-out 2.8s both; }
-  .ft   { animation: fadeUp 1.2s ease-out 3.4s both; }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0);   }
-  }
-
-  /* Underline draw */
-  .und {
-    stroke-dasharray: 380;
-    stroke-dashoffset: 380;
-    animation: drawLine 1.4s ease-out 2.2s both, undPulse 4s ease-in-out 4s infinite;
-  }
-  @keyframes drawLine { to { stroke-dashoffset: 0; } }
-  @keyframes undPulse {
-    0%,100% { opacity: 0.4; }
-    50%      { opacity: 1;   }
-  }
-
-  /* Dot endpoints */
-  .dot { animation: dotPulse 3s ease-in-out infinite; }
-  @keyframes dotPulse {
-    0%,100% { opacity: 0.3; }
-    50%      { opacity: 1;   }
-  }
-
-  /* Rising particles */
-  .p1 { animation: rise1 9s linear infinite; }
-  .p2 { animation: rise1 12s linear -4s infinite; }
-  .p3 { animation: rise1 7s linear -2s infinite; }
-  .p4 { animation: rise1 11s linear -6s infinite; }
-  .p5 { animation: rise1 15s linear -8s infinite; }
-  @keyframes rise1 {
-    0%  { transform: translateY(0px);    opacity: 0; }
-    5%  { opacity: 0.7; }
-    90% { opacity: 0.5; }
-    100%{ transform: translateY(-260px); opacity: 0; }
-  }
-
-  /* Glitch clips on name */
-  .gla { animation: glA 9s step-end infinite; opacity:0; }
-  .glb { animation: glB 9s step-end infinite; opacity:0; }
-  @keyframes glA {
-    0%,82%,100% { opacity:0; clip-path:none; }
-    83% { opacity:0.6; clip-path:inset(15% 0 60% 0); }
-    84% { opacity:0; }
-    85% { opacity:0.5; clip-path:inset(55% 0 10% 0); }
-    86% { opacity:0; }
-  }
-  @keyframes glB {
-    0%,82.5%,100% { opacity:0; clip-path:none; }
-    83.5% { opacity:0.5; clip-path:inset(40% 0 30% 0); }
-    84.5% { opacity:0; }
-    85.5% { opacity:0.4; clip-path:inset(5% 0 75% 0); }
-    86.5% { opacity:0; }
-  }
+  /* Status bar entrance */
+  .sbar { animation: lineIn .3s ease 0.1s both; }
 </style>
-
-<!-- ── GRADIENTS ── -->
-<radialGradient id="bgc" cx="50%" cy="45%" r="70%">
-  <stop offset="0%"   stop-color="#111118"/>
-  <stop offset="100%" stop-color="#050507"/>
-</radialGradient>
-
-<!-- Left silver glow -->
-<radialGradient id="gl" cx="0%" cy="40%" r="60%">
-  <stop offset="0%"   stop-color="#c0c0c0" stop-opacity="0.08"/>
-  <stop offset="100%" stop-color="#c0c0c0" stop-opacity="0"/>
-</radialGradient>
-
-<!-- Right silver glow -->
-<radialGradient id="gr" cx="100%" cy="55%" r="55%">
-  <stop offset="0%"   stop-color="#a0a0a0" stop-opacity="0.07"/>
-  <stop offset="100%" stop-color="#a0a0a0" stop-opacity="0"/>
-</radialGradient>
-
-<!-- Top border: silver shimmer -->
-<linearGradient id="tb" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
-  <stop offset="20%"  stop-color="#888888" stop-opacity="0.6"/>
-  <stop offset="50%"  stop-color="#ffffff" stop-opacity="1"/>
-  <stop offset="80%"  stop-color="#888888" stop-opacity="0.6"/>
-  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-</linearGradient>
-
-<!-- Bottom border: dimmer -->
-<linearGradient id="bb" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
-  <stop offset="30%"  stop-color="#555555" stop-opacity="0.5"/>
-  <stop offset="50%"  stop-color="#888888" stop-opacity="0.7"/>
-  <stop offset="70%"  stop-color="#555555" stop-opacity="0.5"/>
-  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-</linearGradient>
-
-<!-- Scan beam -->
-<linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
-  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
-  <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.04"/>
-  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-</linearGradient>
-
-<!-- Underline gradient -->
-<linearGradient id="ug" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
-  <stop offset="20%"  stop-color="#999999" stop-opacity="0.8"/>
-  <stop offset="50%"  stop-color="#ffffff" stop-opacity="1"/>
-  <stop offset="80%"  stop-color="#999999" stop-opacity="0.8"/>
-  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-</linearGradient>
-
-<!-- Noise pattern (subtle grain) -->
-<filter id="noise">
-  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noiseOut"/>
-  <feColorMatrix in="noiseOut" type="saturate" values="0" result="grayNoise"/>
-  <feComposite in="grayNoise" in2="SourceGraphic" operator="in"/>
-</filter>
-
-<!-- Soft name glow -->
-<filter id="nglow" x="-8%" y="-25%" width="116%" height="150%">
-  <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
-  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-</filter>
-
-<!-- Handle glow -->
-<filter id="hglow" x="-30%" y="-80%" width="160%" height="260%">
-  <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
-  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-</filter>
 </defs>
 
-<!-- ██ BACKGROUND ██ -->
-<rect width="830" height="260" fill="url(#bgc)" rx="10"/>
+<!-- ██ EDITOR BACKGROUND ██ -->
+<rect width="830" height="260" fill="#1e1e1e"/>
 
-<!-- Film grain overlay -->
-<rect class="grain" width="830" height="260" fill="url(#bgc)" rx="10" filter="url(#noise)" opacity="0.05"/>
+<!-- ██ TAB BAR ██ -->
+<rect width="830" height="35" fill="#252526"/>
 
-<!-- Ambient silver glows -->
-<rect class="glow-l" width="830" height="260" fill="url(#gl)" rx="10"/>
-<rect class="glow-r" width="830" height="260" fill="url(#gr)" rx="10"/>
+<!-- Inactive tabs -->
+<text x="12" y="22" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#6a6a6a" letter-spacing="1">EXPLORER</text>
+<line x1="110" y1="0" x2="110" y2="35" stroke="#1e1e1e" stroke-width="1"/>
 
-<!-- ██ SCAN LINE ██ -->
-<rect class="scan" width="830" height="60" fill="url(#sg)"/>
+<!-- Active tab: profile.js -->
+<rect x="110" y="0" width="152" height="35" fill="#1e1e1e"/>
+<rect x="110" y="0" width="152" height="2" fill="#007acc"/>
+<!-- JS file icon badge -->
+<rect x="126" y="10" width="13" height="13" fill="#f7df1e" rx="1.5"/>
+<text x="129.5" y="20.5" font-family="'Courier New',monospace" font-size="6.5" fill="#1a1a1a" font-weight="bold">JS</text>
+<!-- Tab label -->
+<text x="146" y="22" font-family="'Segoe UI',Arial,sans-serif" font-size="12" fill="#cccccc">profile.js</text>
+<!-- Modified dot -->
+<circle cx="253" cy="17" r="3.5" fill="#cccccc" opacity="0.55"/>
+<!-- Tab right separator -->
+<line x1="262" y1="0" x2="262" y2="35" stroke="#3d3d3d" stroke-width="1"/>
 
-<!-- ██ HORIZONTAL RULE LINES (film strip aesthetic) ██ -->
-<line x1="0" y1="28" x2="830" y2="28" stroke="#ffffff" stroke-width="0.4" opacity="0.05"/>
-<line x1="0" y1="232" x2="830" y2="232" stroke="#ffffff" stroke-width="0.4" opacity="0.05"/>
+<!-- More tabs hint -->
+<text x="276" y="22" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#555">README.md</text>
+<line x1="366" y1="0" x2="366" y2="35" stroke="#333" stroke-width="1"/>
 
-<!-- ██ BORDERS ██ -->
-<rect class="bdr-t" x="0" y="0"     width="830" height="2" fill="url(#tb)" rx="1"/>
-<rect class="bdr-b" x="0" y="258"   width="830" height="2" fill="url(#bb)" rx="1"/>
+<!-- ██ ACTIVITY BAR (left strip) ██ -->
+<rect x="0" y="35" width="8" height="203" fill="#333333"/>
 
-<!-- ██ CORNER L-BRACKETS ██ -->
-<g class="cr" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.6">
-  <line x1="16" y1="14" x2="16" y2="38"/>
-  <line x1="16" y1="14" x2="40" y2="14"/>
+<!-- ██ GUTTER ██ -->
+<rect x="8" y="35" width="46" height="203" fill="#1e1e1e"/>
+<line x1="54" y1="35" x2="54" y2="238" stroke="#3c3c3c" stroke-width="1"/>
+
+<!-- Line numbers -->
+<g class="lnum" font-family="'Courier New',Courier,monospace" font-size="12" fill="#585858" text-anchor="end">
+  <text x="47" y="58">1</text>
+  <text x="47" y="76">2</text>
+  <text x="47" y="94">3</text>
+  <text x="47" y="112">4</text>
+  <text x="47" y="130">5</text>
+  <text x="47" y="148">6</text>
+  <text x="47" y="166">7</text>
+  <text x="47" y="184">8</text>
+  <text x="47" y="202">9</text>
+  <text x="47" y="220">10</text>
 </g>
-<g class="cr" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.6" style="animation-delay:-1.5s">
-  <line x1="814" y1="14" x2="814" y2="38"/>
-  <line x1="790" y1="14" x2="814" y2="14"/>
+
+<!-- ██ CODE AREA ██ -->
+<rect x="54" y="35" width="776" height="203" fill="#1e1e1e"/>
+
+<!-- Active line highlight — moves down as each line is typed -->
+<rect x="54" y="44" width="776" height="18" fill="#ffffff" opacity="0.05">
+  <animate attributeName="y"
+    values="44;62;80;98;116;134;152;170;188;206"
+    keyTimes="0;0.11;0.22;0.33;0.44;0.55;0.66;0.77;0.88;1"
+    dur="4.0s" calcMode="discrete" repeatCount="1" fill="freeze"/>
+</rect>
+
+<!-- ██ SYNTAX-HIGHLIGHTED CODE ██ -->
+<g font-family="'Courier New',Courier,monospace" font-size="12.5">
+
+  <!-- L1: // 0xsnowZ — profile.js -->
+  <text class="l1" y="58">
+    <tspan x="64" fill="#6a9955">// 0xsnowZ — profile.js</tspan>
+  </text>
+
+  <!-- L2: blank -->
+  <text class="l2" y="76"><tspan x="64" fill="#d4d4d4"> </tspan></text>
+
+  <!-- L3: const developer = { -->
+  <text class="l3" y="94">
+    <tspan x="64" fill="#569cd6">const </tspan>
+    <tspan fill="#9cdcfe">developer</tspan>
+    <tspan fill="#d4d4d4"> = {</tspan>
+  </text>
+
+  <!-- L4: name -->
+  <text class="l4" y="112">
+    <tspan x="79" fill="#9cdcfe">name</tspan>
+    <tspan fill="#d4d4d4">     : </tspan>
+    <tspan fill="#ce9178">"Mohamed EL GAROUANI"</tspan>
+    <tspan fill="#d4d4d4">,</tspan>
+  </text>
+
+  <!-- L5: role -->
+  <text class="l5" y="130">
+    <tspan x="79" fill="#9cdcfe">role</tspan>
+    <tspan fill="#d4d4d4">     : </tspan>
+    <tspan fill="#ce9178">"Software Engineer"</tspan>
+    <tspan fill="#d4d4d4">,</tspan>
+  </text>
+
+  <!-- L6: stack -->
+  <text class="l6" y="148">
+    <tspan x="79" fill="#9cdcfe">stack</tspan>
+    <tspan fill="#d4d4d4">    : [</tspan>
+    <tspan fill="#ce9178">"React"</tspan>
+    <tspan fill="#d4d4d4">, </tspan>
+    <tspan fill="#ce9178">"Node.js"</tspan>
+    <tspan fill="#d4d4d4">, </tspan>
+    <tspan fill="#ce9178">"PHP"</tspan>
+    <tspan fill="#d4d4d4">, </tspan>
+    <tspan fill="#ce9178">"Laravel"</tspan>
+    <tspan fill="#d4d4d4">],</tspan>
+  </text>
+
+  <!-- L7: location -->
+  <text class="l7" y="166">
+    <tspan x="79" fill="#9cdcfe">location</tspan>
+    <tspan fill="#d4d4d4"> : </tspan>
+    <tspan fill="#ce9178">"Morocco"</tspan>
+    <tspan fill="#d4d4d4">,</tspan>
+  </text>
+
+  <!-- L8: contact -->
+  <text class="l8" y="184">
+    <tspan x="79" fill="#9cdcfe">contact</tspan>
+    <tspan fill="#d4d4d4">  : </tspan>
+    <tspan fill="#ce9178">"snowz.tech"</tspan>
+    <tspan fill="#d4d4d4">,</tspan>
+  </text>
+
+  <!-- L9: motto -->
+  <text class="l9" y="202">
+    <tspan x="79" fill="#9cdcfe">motto</tspan>
+    <tspan fill="#d4d4d4">    : </tspan>
+    <tspan fill="#dcdcaa">() =></tspan>
+    <tspan fill="#569cd6"> while</tspan>
+    <tspan fill="#d4d4d4">(alive) { </tspan>
+    <tspan fill="#dcdcaa">learn</tspan>
+    <tspan fill="#d4d4d4">(); </tspan>
+    <tspan fill="#dcdcaa">code</tspan>
+    <tspan fill="#d4d4d4">(); }</tspan>
+  </text>
+
+  <!-- L10: }; -->
+  <text class="l10" y="220">
+    <tspan x="64" fill="#d4d4d4">};</tspan>
+  </text>
+
 </g>
-<g class="cr" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.6" style="animation-delay:-3s">
-  <line x1="16" y1="246" x2="16" y2="222"/>
-  <line x1="16" y1="246" x2="40"  y2="246"/>
+
+<!-- ██ BLINKING CURSOR (block cursor after line 10) ██ -->
+<rect class="cursor" x="76" y="209" width="7" height="13" fill="#aeafad" opacity="0"/>
+
+<!-- ██ MINIMAP (right side) ██ -->
+<rect x="756" y="35" width="74" height="203" fill="#1a1a1a"/>
+<line x1="756" y1="35" x2="756" y2="238" stroke="#333" stroke-width="1"/>
+<!-- Minimap code representation (thin colored lines) -->
+<g opacity="0.5">
+  <rect x="763" y="47"  width="55" height="2.5" fill="#6a9955" rx="1"/>
+  <rect x="763" y="58"  width="0"  height="2.5" fill="#d4d4d4" rx="1"/>
+  <rect x="763" y="69"  width="42" height="2.5" fill="#569cd6" rx="1"/>
+  <rect x="763" y="80"  width="60" height="2.5" fill="#9cdcfe" rx="1"/>
+  <rect x="763" y="91"  width="50" height="2.5" fill="#ce9178" rx="1"/>
+  <rect x="763" y="102" width="58" height="2.5" fill="#9cdcfe" rx="1"/>
+  <rect x="763" y="113" width="45" height="2.5" fill="#ce9178" rx="1"/>
+  <rect x="763" y="124" width="48" height="2.5" fill="#9cdcfe" rx="1"/>
+  <rect x="763" y="135" width="62" height="2.5" fill="#dcdcaa" rx="1"/>
+  <rect x="763" y="146" width="22" height="2.5" fill="#d4d4d4" rx="1"/>
 </g>
-<g class="cr" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.6" style="animation-delay:-0.8s">
-  <line x1="814" y1="246" x2="814" y2="222"/>
-  <line x1="790" y1="246" x2="814" y2="246"/>
-</g>
+<!-- Minimap viewport indicator -->
+<rect x="758" y="40" width="70" height="120" fill="#ffffff" opacity="0.05" rx="1"/>
 
-<!-- ██ RISING PARTICLES ██ -->
-<circle class="p1" cx="110" cy="255" r="1.5" fill="#aaaaaa" opacity="0"/>
-<circle class="p2" cx="250" cy="255" r="1"   fill="#888888" opacity="0"/>
-<circle class="p3" cx="415" cy="255" r="1.5" fill="#cccccc" opacity="0"/>
-<circle class="p4" cx="590" cy="255" r="1"   fill="#aaaaaa" opacity="0"/>
-<circle class="p5" cx="720" cy="255" r="1.5" fill="#888888" opacity="0"/>
-
-<!-- ██ HANDLE ██ -->
-<text class="handle" x="415" y="74"
-  font-family="'Courier New',Courier,monospace"
-  font-size="13" fill="#888888" text-anchor="middle"
-  filter="url(#hglow)" letter-spacing="8" font-weight="400">
-  &#47;&#47; 0xsnowZ
-</text>
-
-<!-- ██ NAME GLITCH COPIES ██ -->
-<text class="gla" x="413" y="150"
-  font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-  font-size="52" font-weight="900" fill="#aaaaaa" text-anchor="middle" letter-spacing="3px">
-  MOHAMED EL GAROUANI
-</text>
-<text class="glb" x="417" y="150"
-  font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-  font-size="52" font-weight="900" fill="#cccccc" text-anchor="middle" letter-spacing="3px">
-  MOHAMED EL GAROUANI
-</text>
-
-<!-- ██ MAIN NAME ██ -->
-<text class="name" x="415" y="150"
-  font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-  font-size="52" font-weight="900"
-  fill="#f5f5f5" text-anchor="middle"
-  filter="url(#nglow)">
-  MOHAMED EL GAROUANI
-</text>
-
-<!-- ██ SUBTITLE ██ -->
-<text class="sub" x="415" y="176"
-  font-family="'Courier New',Courier,monospace"
-  font-size="11.5" fill="#555555" text-anchor="middle" letter-spacing="5">
-  SOFTWARE ENGINEER  ·  FULL-STACK DEVELOPER
-</text>
-
-<!-- ██ ANIMATED UNDERLINE ██ -->
-<line class="und" x1="225" y1="192" x2="605" y2="192"
-  stroke="url(#ug)" stroke-width="1.2"/>
-<circle class="dot" cx="225" cy="192" r="2" fill="#aaaaaa"/>
-<circle class="dot" cx="605" cy="192" r="2" fill="#aaaaaa" style="animation-delay:-1.5s"/>
-
-<!-- ██ MOTTO ██ -->
-<text class="mot" x="415" y="216"
-  font-family="'Courier New',Courier,monospace"
-  font-size="10" fill="#333333" text-anchor="middle" letter-spacing="1">
-  while(alive) { learn(); code(); improve(); }
-</text>
-
-<!-- ██ FOOTER ██ -->
-<text class="ft" x="415" y="242"
-  font-family="'Courier New',Courier,monospace"
-  font-size="8.5" fill="#252525" text-anchor="middle" letter-spacing="2">
-  Morocco  ·  snowz.tech  ·  @0xsnow_Z
-</text>
+<!-- ██ STATUS BAR ██ -->
+<rect class="sbar" x="0" y="238" width="830" height="22" fill="#007acc"/>
+<!-- Left section -->
+<text x="12" y="253" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="white" opacity="0.95">&#9135; main</text>
+<text x="78" y="253" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="white" opacity="0.75">0 problems</text>
+<!-- Center info -->
+<text x="415" y="253" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="600">0xsnowZ &#183; Full-Stack Developer &#183; Morocco</text>
+<!-- Right info -->
+<text x="680" y="253" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="white" opacity="0.75">JavaScript</text>
+<text x="750" y="253" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="white" opacity="0.75">UTF-8</text>
+<text x="820" y="253" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="white" text-anchor="end" opacity="0.75">Ln 10, Col 3</text>
 
 </svg>
