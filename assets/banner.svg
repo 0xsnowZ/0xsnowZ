@@ -1,240 +1,299 @@
-<svg width="830" height="250" viewBox="0 0 830 250" xmlns="http://www.w3.org/2000/svg">
+<svg width="830" height="260" viewBox="0 0 830 260" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <style>
-  .scan { animation: scan 6s linear infinite; }
-  @keyframes scan {
-    0%   { transform: translateY(-80px); }
-    100% { transform: translateY(340px); }
+  /* Noise grain overlay flicker */
+  .grain { animation: grainShift 0.12s steps(1) infinite; }
+  @keyframes grainShift {
+    0%  { opacity: 0.04; }
+    25% { opacity: 0.07; }
+    50% { opacity: 0.03; }
+    75% { opacity: 0.06; }
   }
-  .bdr { animation: bdrPulse 3.5s ease-in-out infinite alternate; }
-  @keyframes bdrPulse {
-    from { opacity: 0.5; }
-    to   { opacity: 1;   }
+
+  /* Slow ambient glow pulse */
+  .glow-l { animation: glowPulse 8s ease-in-out infinite; }
+  .glow-r { animation: glowPulse 10s ease-in-out 2s infinite reverse; }
+  @keyframes glowPulse {
+    0%,100% { opacity: 0.45; }
+    50%      { opacity: 0.85; }
   }
-  .handle {
-    animation: revealFade 1.2s ease-out 0.3s both,
-               handlePulse 3s ease-in-out 2.5s infinite;
+
+  /* Border breathe */
+  .bdr-t { animation: bdrBreath 5s ease-in-out infinite alternate; }
+  .bdr-b { animation: bdrBreath 5s ease-in-out infinite alternate-reverse; }
+  @keyframes bdrBreath {
+    from { opacity: 0.4; }
+    to   { opacity: 1.0; }
   }
-  @keyframes handlePulse {
-    0%,100% { opacity: 0.72; }
+
+  /* Scan line sweep */
+  .scan { animation: scanMove 8s linear infinite; }
+  @keyframes scanMove {
+    0%   { transform: translateY(-60px); opacity: 1; }
+    85%  { opacity: 1; }
+    100% { transform: translateY(330px); opacity: 0; }
+  }
+
+  /* Corner L marks */
+  .cr { animation: crFade 4s ease-in-out infinite; }
+  @keyframes crFade {
+    0%,100% { opacity: 0.25; }
+    50%      { opacity: 0.8;  }
+  }
+
+  /* Handle flicker */
+  .handle { animation: handleIn 1s ease-out 0.2s both, handleFlicker 6s ease-in-out 3s infinite; }
+  @keyframes handleIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes handleFlicker {
+    0%,90%,100% { opacity: 1; }
+    91%          { opacity: 0.5; }
+    92%          { opacity: 1;   }
+    93%          { opacity: 0.3; }
+    94%          { opacity: 1;   }
+  }
+
+  /* Name cinematic reveal */
+  .name { animation: nameReveal 1.8s cubic-bezier(0.16,1,0.3,1) 0.5s both; }
+  @keyframes nameReveal {
+    0%   { opacity: 0; letter-spacing: 12px; }
+    100% { opacity: 1; letter-spacing: 3px;  }
+  }
+
+  /* Subtitle and extras */
+  .sub  { animation: fadeUp 1.2s ease-out 1.6s both; }
+  .line { animation: drawLine 1.4s ease-out 2.2s both; }
+  .mot  { animation: fadeUp 1.2s ease-out 2.8s both; }
+  .ft   { animation: fadeUp 1.2s ease-out 3.4s both; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0);   }
+  }
+
+  /* Underline draw */
+  .und {
+    stroke-dasharray: 380;
+    stroke-dashoffset: 380;
+    animation: drawLine 1.4s ease-out 2.2s both, undPulse 4s ease-in-out 4s infinite;
+  }
+  @keyframes drawLine { to { stroke-dashoffset: 0; } }
+  @keyframes undPulse {
+    0%,100% { opacity: 0.4; }
     50%      { opacity: 1;   }
   }
-  .glitch-c { opacity:0; animation: glitchC 7s step-end infinite; }
-  .glitch-p { opacity:0; animation: glitchP 7s step-end infinite; }
-  @keyframes glitchC {
-    0%,85%,100% { opacity:0; }
-    86%          { opacity:0.85; }
-    87%          { opacity:0;   }
-    88%          { opacity:0.7; }
-    89%          { opacity:0;   }
+
+  /* Dot endpoints */
+  .dot { animation: dotPulse 3s ease-in-out infinite; }
+  @keyframes dotPulse {
+    0%,100% { opacity: 0.3; }
+    50%      { opacity: 1;   }
   }
-  @keyframes glitchP {
-    0%,85.5%,100% { opacity:0; }
-    86.5%          { opacity:0.75; }
-    87.5%          { opacity:0;   }
-    88.5%          { opacity:0.6; }
-    89.5%          { opacity:0;   }
+
+  /* Rising particles */
+  .p1 { animation: rise1 9s linear infinite; }
+  .p2 { animation: rise1 12s linear -4s infinite; }
+  .p3 { animation: rise1 7s linear -2s infinite; }
+  .p4 { animation: rise1 11s linear -6s infinite; }
+  .p5 { animation: rise1 15s linear -8s infinite; }
+  @keyframes rise1 {
+    0%  { transform: translateY(0px);    opacity: 0; }
+    5%  { opacity: 0.7; }
+    90% { opacity: 0.5; }
+    100%{ transform: translateY(-260px); opacity: 0; }
   }
-  .name-txt {
-    animation: revealFade 1.3s ease-out 0.9s both,
-               nameGlow 4.5s ease-in-out 3s infinite;
+
+  /* Glitch clips on name */
+  .gla { animation: glA 9s step-end infinite; opacity:0; }
+  .glb { animation: glB 9s step-end infinite; opacity:0; }
+  @keyframes glA {
+    0%,82%,100% { opacity:0; clip-path:none; }
+    83% { opacity:0.6; clip-path:inset(15% 0 60% 0); }
+    84% { opacity:0; }
+    85% { opacity:0.5; clip-path:inset(55% 0 10% 0); }
+    86% { opacity:0; }
   }
-  @keyframes nameGlow {
-    0%,100% { opacity:0.9; }
-    50%      { opacity:1;  }
-  }
-  .r1 { animation: revealFade 1.2s ease-out 0.3s both; }
-  .r2 { animation: revealFade 1.2s ease-out 0.9s both; }
-  .r3 { animation: revealFade 1.2s ease-out 1.5s both; }
-  .r4 { animation: revealFade 1.2s ease-out 2.0s both; }
-  .r5 { animation: revealFade 1.2s ease-out 2.6s both; }
-  .r6 { animation: revealFade 1.2s ease-out 3.1s both; }
-  @keyframes revealFade {
-    from { opacity:0; }
-    to   { opacity:1; }
-  }
-  .und {
-    stroke-dasharray: 430;
-    stroke-dashoffset: 430;
-    animation: drawLine 1.8s ease-out 2s both, undPulse 3.5s ease-in-out 4s infinite;
-  }
-  @keyframes drawLine { to { stroke-dashoffset:0; } }
-  @keyframes undPulse {
-    0%,100% { opacity:0.55; }
-    50%      { opacity:1;   }
-  }
-  .dot-c { animation: dotC 2.5s ease-in-out infinite; }
-  .dot-p { animation: dotP 2.5s ease-in-out infinite; }
-  @keyframes dotC { 0%,100%{opacity:.4;} 50%{opacity:1;} }
-  @keyframes dotP { 0%,100%{opacity:1;} 50%{opacity:.4;} }
-  .au1 { animation: auPulse 7s ease-in-out infinite; }
-  .au2 { animation: auPulse 9s ease-in-out infinite reverse; }
-  .au3 { animation: auPulse 11s ease-in-out 2s infinite; }
-  @keyframes auPulse {
-    0%,100% { opacity:0.5; }
-    50%      { opacity:1;  }
-  }
-  .cr { animation: crPulse 4s ease-in-out infinite; }
-  @keyframes crPulse {
-    0%,100% { opacity:0.3; }
-    50%      { opacity:0.9; }
+  @keyframes glB {
+    0%,82.5%,100% { opacity:0; clip-path:none; }
+    83.5% { opacity:0.5; clip-path:inset(40% 0 30% 0); }
+    84.5% { opacity:0; }
+    85.5% { opacity:0.4; clip-path:inset(5% 0 75% 0); }
+    86.5% { opacity:0; }
   }
 </style>
 
-<radialGradient id="bg" cx="50%" cy="50%" r="75%">
-  <stop offset="0%"   stop-color="#080d1e"/>
-  <stop offset="100%" stop-color="#020408"/>
+<!-- ── GRADIENTS ── -->
+<radialGradient id="bgc" cx="50%" cy="45%" r="70%">
+  <stop offset="0%"   stop-color="#111118"/>
+  <stop offset="100%" stop-color="#050507"/>
 </radialGradient>
-<radialGradient id="au1" cx="12%" cy="30%" r="55%">
-  <stop offset="0%"   stop-color="#00d4ff" stop-opacity=".14"/>
-  <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+
+<!-- Left silver glow -->
+<radialGradient id="gl" cx="0%" cy="40%" r="60%">
+  <stop offset="0%"   stop-color="#c0c0c0" stop-opacity="0.08"/>
+  <stop offset="100%" stop-color="#c0c0c0" stop-opacity="0"/>
 </radialGradient>
-<radialGradient id="au2" cx="88%" cy="25%" r="50%">
-  <stop offset="0%"   stop-color="#ff0080" stop-opacity=".12"/>
-  <stop offset="100%" stop-color="#ff0080" stop-opacity="0"/>
+
+<!-- Right silver glow -->
+<radialGradient id="gr" cx="100%" cy="55%" r="55%">
+  <stop offset="0%"   stop-color="#a0a0a0" stop-opacity="0.07"/>
+  <stop offset="100%" stop-color="#a0a0a0" stop-opacity="0"/>
 </radialGradient>
-<radialGradient id="au3" cx="50%" cy="95%" r="45%">
-  <stop offset="0%"   stop-color="#6d28d9" stop-opacity=".13"/>
-  <stop offset="100%" stop-color="#6d28d9" stop-opacity="0"/>
-</radialGradient>
-<linearGradient id="topBdr" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%"   stop-color="#ff0080" stop-opacity="0"/>
-  <stop offset="20%"  stop-color="#ff0080" stop-opacity=".9"/>
-  <stop offset="50%"  stop-color="#00d4ff" stop-opacity="1"/>
-  <stop offset="80%"  stop-color="#ff0080" stop-opacity=".9"/>
-  <stop offset="100%" stop-color="#ff0080" stop-opacity="0"/>
+
+<!-- Top border: silver shimmer -->
+<linearGradient id="tb" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="20%"  stop-color="#888888" stop-opacity="0.6"/>
+  <stop offset="50%"  stop-color="#ffffff" stop-opacity="1"/>
+  <stop offset="80%"  stop-color="#888888" stop-opacity="0.6"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="botBdr" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%"   stop-color="#00d4ff" stop-opacity="0"/>
-  <stop offset="20%"  stop-color="#6d28d9" stop-opacity=".7"/>
-  <stop offset="50%"  stop-color="#00d4ff" stop-opacity=".9"/>
-  <stop offset="80%"  stop-color="#6d28d9" stop-opacity=".7"/>
-  <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+
+<!-- Bottom border: dimmer -->
+<linearGradient id="bb" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="30%"  stop-color="#555555" stop-opacity="0.5"/>
+  <stop offset="50%"  stop-color="#888888" stop-opacity="0.7"/>
+  <stop offset="70%"  stop-color="#555555" stop-opacity="0.5"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
-  <stop offset="0%"   stop-color="#00d4ff" stop-opacity="0"/>
-  <stop offset="50%"  stop-color="#00d4ff" stop-opacity=".055"/>
-  <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+
+<!-- Scan beam -->
+<linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.04"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="undGrad" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%"   stop-color="#ff0080" stop-opacity="0"/>
-  <stop offset="25%"  stop-color="#00d4ff" stop-opacity="1"/>
-  <stop offset="75%"  stop-color="#00d4ff" stop-opacity="1"/>
-  <stop offset="100%" stop-color="#ff0080" stop-opacity="0"/>
+
+<!-- Underline gradient -->
+<linearGradient id="ug" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="20%"  stop-color="#999999" stop-opacity="0.8"/>
+  <stop offset="50%"  stop-color="#ffffff" stop-opacity="1"/>
+  <stop offset="80%"  stop-color="#999999" stop-opacity="0.8"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
 </linearGradient>
-<filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
-  <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+
+<!-- Noise pattern (subtle grain) -->
+<filter id="noise">
+  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noiseOut"/>
+  <feColorMatrix in="noiseOut" type="saturate" values="0" result="grayNoise"/>
+  <feComposite in="grayNoise" in2="SourceGraphic" operator="in"/>
+</filter>
+
+<!-- Soft name glow -->
+<filter id="nglow" x="-8%" y="-25%" width="116%" height="150%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
   <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
 </filter>
-<filter id="nameFlt" x="-10%" y="-20%" width="120%" height="140%">
-  <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
+
+<!-- Handle glow -->
+<filter id="hglow" x="-30%" y="-80%" width="160%" height="260%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
   <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
 </filter>
 </defs>
 
-<!-- BACKGROUND -->
-<rect width="830" height="250" fill="url(#bg)" rx="12"/>
-<rect class="au1" width="830" height="250" fill="url(#au1)" rx="12"/>
-<rect class="au2" width="830" height="250" fill="url(#au2)" rx="12"/>
-<rect class="au3" width="830" height="250" fill="url(#au3)" rx="12"/>
+<!-- ██ BACKGROUND ██ -->
+<rect width="830" height="260" fill="url(#bgc)" rx="10"/>
 
-<!-- SCAN BEAM -->
-<rect class="scan" width="830" height="80" fill="url(#scanGrad)"/>
+<!-- Film grain overlay -->
+<rect class="grain" width="830" height="260" fill="url(#bgc)" rx="10" filter="url(#noise)" opacity="0.05"/>
 
-<!-- MATRIX RAIN – LEFT (cyan) -->
-<g font-family="'Courier New',Courier,monospace" font-size="12" fill="#00d4ff" text-anchor="middle">
-  <g><text x="20" y="0" opacity="1.0">0</text><text x="20" y="15" opacity=".7">x</text><text x="20" y="30" opacity=".4">F</text><text x="20" y="45" opacity=".2">3</text><text x="20" y="60" opacity=".07">A</text><animateTransform attributeName="transform" type="translate" from="0,-70" to="0,310" dur="4.2s" repeatCount="indefinite"/></g>
-  <g><text x="20" y="0" opacity=".8">1</text><text x="20" y="15" opacity=".5">B</text><text x="20" y="30" opacity=".25">7</text><text x="20" y="45" opacity=".1">0</text><animateTransform attributeName="transform" type="translate" from="0,-155" to="0,310" dur="4.2s" repeatCount="indefinite" begin="-2.1s"/></g>
-  <g><text x="44" y="0" opacity="1.0">E</text><text x="44" y="15" opacity=".65">5</text><text x="44" y="30" opacity=".35">C</text><text x="44" y="45" opacity=".15">9</text><animateTransform attributeName="transform" type="translate" from="0,-40" to="0,310" dur="5.3s" repeatCount="indefinite" begin="-1.2s"/></g>
-  <g><text x="44" y="0" opacity=".7">2</text><text x="44" y="15" opacity=".4">A</text><text x="44" y="30" opacity=".18">D</text><animateTransform attributeName="transform" type="translate" from="0,-190" to="0,310" dur="5.3s" repeatCount="indefinite" begin="-3.7s"/></g>
-  <g><text x="68" y="0" opacity=".9">F</text><text x="68" y="15" opacity=".55">8</text><text x="68" y="30" opacity=".28">1</text><animateTransform attributeName="transform" type="translate" from="0,-100" to="0,310" dur="6.1s" repeatCount="indefinite" begin="-0.8s"/></g>
-  <g><text x="68" y="0" opacity=".6">4</text><text x="68" y="15" opacity=".3">7</text><animateTransform attributeName="transform" type="translate" from="0,-230" to="0,310" dur="6.1s" repeatCount="indefinite" begin="-4.5s"/></g>
+<!-- Ambient silver glows -->
+<rect class="glow-l" width="830" height="260" fill="url(#gl)" rx="10"/>
+<rect class="glow-r" width="830" height="260" fill="url(#gr)" rx="10"/>
+
+<!-- ██ SCAN LINE ██ -->
+<rect class="scan" width="830" height="60" fill="url(#sg)"/>
+
+<!-- ██ HORIZONTAL RULE LINES (film strip aesthetic) ██ -->
+<line x1="0" y1="28" x2="830" y2="28" stroke="#ffffff" stroke-width="0.4" opacity="0.05"/>
+<line x1="0" y1="232" x2="830" y2="232" stroke="#ffffff" stroke-width="0.4" opacity="0.05"/>
+
+<!-- ██ BORDERS ██ -->
+<rect class="bdr-t" x="0" y="0"     width="830" height="2" fill="url(#tb)" rx="1"/>
+<rect class="bdr-b" x="0" y="258"   width="830" height="2" fill="url(#bb)" rx="1"/>
+
+<!-- ██ CORNER L-BRACKETS ██ -->
+<g class="cr" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.6">
+  <line x1="16" y1="14" x2="16" y2="38"/>
+  <line x1="16" y1="14" x2="40" y2="14"/>
+</g>
+<g class="cr" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.6" style="animation-delay:-1.5s">
+  <line x1="814" y1="14" x2="814" y2="38"/>
+  <line x1="790" y1="14" x2="814" y2="14"/>
+</g>
+<g class="cr" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.6" style="animation-delay:-3s">
+  <line x1="16" y1="246" x2="16" y2="222"/>
+  <line x1="16" y1="246" x2="40"  y2="246"/>
+</g>
+<g class="cr" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.6" style="animation-delay:-0.8s">
+  <line x1="814" y1="246" x2="814" y2="222"/>
+  <line x1="790" y1="246" x2="814" y2="246"/>
 </g>
 
-<!-- MATRIX RAIN – RIGHT (pink) -->
-<g font-family="'Courier New',Courier,monospace" font-size="12" fill="#ff0080" text-anchor="middle">
-  <g><text x="810" y="0" opacity="1.0">9</text><text x="810" y="15" opacity=".65">E</text><text x="810" y="30" opacity=".35">B</text><text x="810" y="45" opacity=".15">5</text><animateTransform attributeName="transform" type="translate" from="0,-85" to="0,310" dur="4.6s" repeatCount="indefinite" begin="-0.4s"/></g>
-  <g><text x="810" y="0" opacity=".75">D</text><text x="810" y="15" opacity=".45">6</text><text x="810" y="30" opacity=".2">2</text><animateTransform attributeName="transform" type="translate" from="0,-170" to="0,310" dur="4.6s" repeatCount="indefinite" begin="-2.8s"/></g>
-  <g><text x="786" y="0" opacity=".9">7</text><text x="786" y="15" opacity=".55">3</text><text x="786" y="30" opacity=".28">F</text><text x="786" y="45" opacity=".1">8</text><animateTransform attributeName="transform" type="translate" from="0,-55" to="0,310" dur="5.7s" repeatCount="indefinite" begin="-1.8s"/></g>
-  <g><text x="786" y="0" opacity=".65">A</text><text x="786" y="15" opacity=".35">0</text><animateTransform attributeName="transform" type="translate" from="0,-200" to="0,310" dur="5.7s" repeatCount="indefinite" begin="-4.2s"/></g>
-  <g><text x="762" y="0" opacity=".8">C</text><text x="762" y="15" opacity=".5">1</text><text x="762" y="30" opacity=".24">6</text><animateTransform attributeName="transform" type="translate" from="0,-120" to="0,310" dur="6.4s" repeatCount="indefinite" begin="-2.5s"/></g>
-  <g><text x="762" y="0" opacity=".5">4</text><text x="762" y="15" opacity=".22">B</text><animateTransform attributeName="transform" type="translate" from="0,-250" to="0,310" dur="6.4s" repeatCount="indefinite" begin="-5s"/></g>
-</g>
+<!-- ██ RISING PARTICLES ██ -->
+<circle class="p1" cx="110" cy="255" r="1.5" fill="#aaaaaa" opacity="0"/>
+<circle class="p2" cx="250" cy="255" r="1"   fill="#888888" opacity="0"/>
+<circle class="p3" cx="415" cy="255" r="1.5" fill="#cccccc" opacity="0"/>
+<circle class="p4" cx="590" cy="255" r="1"   fill="#aaaaaa" opacity="0"/>
+<circle class="p5" cx="720" cy="255" r="1.5" fill="#888888" opacity="0"/>
 
-<!-- BORDERS -->
-<rect class="bdr" x="0" y="0"     width="830" height="2.5" fill="url(#topBdr)" rx="1"/>
-<rect class="bdr" x="0" y="247.5" width="830" height="2.5" fill="url(#botBdr)" rx="1" style="animation-direction:reverse"/>
-
-<!-- CORNER BRACKETS -->
-<g class="cr" stroke="#00d4ff" stroke-width="1.8" fill="none"><line x1="14" y1="15" x2="14" y2="36"/><line x1="14" y1="15" x2="35" y2="15"/></g>
-<g class="cr" stroke="#ff0080" stroke-width="1.8" fill="none" style="animation-delay:-2s"><line x1="816" y1="15" x2="816" y2="36"/><line x1="795" y1="15" x2="816" y2="15"/></g>
-<g class="cr" stroke="#6d28d9" stroke-width="1.8" fill="none" style="animation-delay:-1s"><line x1="14" y1="235" x2="14" y2="214"/><line x1="14" y1="235" x2="35" y2="235"/></g>
-<g class="cr" stroke="#00d4ff" stroke-width="1.8" fill="none" style="animation-delay:-3s"><line x1="816" y1="235" x2="816" y2="214"/><line x1="795" y1="235" x2="816" y2="235"/></g>
-
-<!-- FLOATING PARTICLES -->
-<circle cx="138" cy="245" r="2"   fill="#00d4ff" opacity="0"><animate attributeName="cy" from="245" to="8"  dur="8s"  repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.06;.9;1" dur="8s"  repeatCount="indefinite"/></circle>
-<circle cx="268" cy="242" r="1.5" fill="#ff0080" opacity="0"><animate attributeName="cy" from="242" to="15" dur="11s" repeatCount="indefinite" begin="-4s"/><animate attributeName="opacity" values="0;.85;.85;0" keyTimes="0;.06;.9;1" dur="11s" repeatCount="indefinite" begin="-4s"/></circle>
-<circle cx="415" cy="248" r="1.5" fill="#00d4ff" opacity="0"><animate attributeName="cy" from="248" to="5"  dur="14s" repeatCount="indefinite" begin="-7s"/><animate attributeName="opacity" values="0;.7;.7;0" keyTimes="0;.06;.9;1" dur="14s" repeatCount="indefinite" begin="-7s"/></circle>
-<circle cx="562" cy="244" r="2"   fill="#6d28d9" opacity="0"><animate attributeName="cy" from="244" to="12" dur="9s"  repeatCount="indefinite" begin="-2s"/><animate attributeName="opacity" values="0;.9;.9;0" keyTimes="0;.06;.9;1" dur="9s"  repeatCount="indefinite" begin="-2s"/></circle>
-<circle cx="690" cy="246" r="1.5" fill="#00d4ff" opacity="0"><animate attributeName="cy" from="246" to="10" dur="10s" repeatCount="indefinite" begin="-5s"/><animate attributeName="opacity" values="0;.8;.8;0" keyTimes="0;.06;.9;1" dur="10s" repeatCount="indefinite" begin="-5s"/></circle>
-<circle cx="350" cy="243" r="1"   fill="#ff0080" opacity="0"><animate attributeName="cy" from="243" to="30" dur="12s" repeatCount="indefinite" begin="-9s"/><animate attributeName="opacity" values="0;.65;.65;0" keyTimes="0;.06;.9;1" dur="12s" repeatCount="indefinite" begin="-9s"/></circle>
-<circle cx="490" cy="247" r="1"   fill="#ff0080" opacity="0"><animate attributeName="cy" from="247" to="20" dur="13s" repeatCount="indefinite" begin="-3s"/><animate attributeName="opacity" values="0;.6;.6;0" keyTimes="0;.06;.9;1" dur="13s" repeatCount="indefinite" begin="-3s"/></circle>
-
-<!-- HANDLE -->
-<text class="handle" x="415" y="76"
+<!-- ██ HANDLE ██ -->
+<text class="handle" x="415" y="74"
   font-family="'Courier New',Courier,monospace"
-  font-size="14" fill="#00d4ff" text-anchor="middle"
-  filter="url(#cyanGlow)" letter-spacing="7" font-weight="600">
-  &lt; 0xsnowZ /&gt;
+  font-size="13" fill="#888888" text-anchor="middle"
+  filter="url(#hglow)" letter-spacing="8" font-weight="400">
+  &#47;&#47; 0xsnowZ
 </text>
 
-<!-- NAME GLITCH SHADOWS -->
-<text class="glitch-c" x="411" y="145"
+<!-- ██ NAME GLITCH COPIES ██ -->
+<text class="gla" x="413" y="150"
   font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-  font-size="46" font-weight="900" fill="#00d4ff" text-anchor="middle">
-  Mohamed EL GAROUANI
+  font-size="52" font-weight="900" fill="#aaaaaa" text-anchor="middle" letter-spacing="3px">
+  MOHAMED EL GAROUANI
 </text>
-<text class="glitch-p" x="419" y="145"
+<text class="glb" x="417" y="150"
   font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-  font-size="46" font-weight="900" fill="#ff0080" text-anchor="middle">
-  Mohamed EL GAROUANI
-</text>
-
-<!-- MAIN NAME -->
-<text class="name-txt" x="415" y="145"
-  font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-  font-size="46" font-weight="900"
-  fill="#ffffff" text-anchor="middle"
-  filter="url(#nameFlt)">
-  Mohamed EL GAROUANI
+  font-size="52" font-weight="900" fill="#cccccc" text-anchor="middle" letter-spacing="3px">
+  MOHAMED EL GAROUANI
 </text>
 
-<!-- ROLE -->
-<text class="r3" x="415" y="172"
+<!-- ██ MAIN NAME ██ -->
+<text class="name" x="415" y="150"
+  font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+  font-size="52" font-weight="900"
+  fill="#f5f5f5" text-anchor="middle"
+  filter="url(#nglow)">
+  MOHAMED EL GAROUANI
+</text>
+
+<!-- ██ SUBTITLE ██ -->
+<text class="sub" x="415" y="176"
   font-family="'Courier New',Courier,monospace"
-  font-size="12" fill="#475569" text-anchor="middle" letter-spacing="3.5">
-  Software Engineer  ·  Full-Stack Developer
+  font-size="11.5" fill="#555555" text-anchor="middle" letter-spacing="5">
+  SOFTWARE ENGINEER  ·  FULL-STACK DEVELOPER
 </text>
 
-<!-- ANIMATED UNDERLINE -->
-<g class="r4">
-  <line class="und" x1="210" y1="187" x2="620" y2="187" stroke="url(#undGrad)" stroke-width="1.8"/>
-  <circle class="dot-c" cx="210" cy="187" r="2.5" fill="#00d4ff"/>
-  <circle class="dot-p" cx="620" cy="187" r="2.5" fill="#ff0080"/>
-</g>
+<!-- ██ ANIMATED UNDERLINE ██ -->
+<line class="und" x1="225" y1="192" x2="605" y2="192"
+  stroke="url(#ug)" stroke-width="1.2"/>
+<circle class="dot" cx="225" cy="192" r="2" fill="#aaaaaa"/>
+<circle class="dot" cx="605" cy="192" r="2" fill="#aaaaaa" style="animation-delay:-1.5s"/>
 
-<!-- MOTTO -->
-<text class="r5" x="415" y="212"
+<!-- ██ MOTTO ██ -->
+<text class="mot" x="415" y="216"
   font-family="'Courier New',Courier,monospace"
-  font-size="10.5" fill="#00d4ff" text-anchor="middle"
-  opacity="0.6" letter-spacing="0.5">
+  font-size="10" fill="#333333" text-anchor="middle" letter-spacing="1">
   while(alive) { learn(); code(); improve(); }
 </text>
 
-<!-- FOOTER -->
-<text class="r6" x="415" y="236"
+<!-- ██ FOOTER ██ -->
+<text class="ft" x="415" y="242"
   font-family="'Courier New',Courier,monospace"
-  font-size="9" fill="#1e293b" text-anchor="middle" letter-spacing="1.8">
+  font-size="8.5" fill="#252525" text-anchor="middle" letter-spacing="2">
   Morocco  ·  snowz.tech  ·  @0xsnow_Z
 </text>
 

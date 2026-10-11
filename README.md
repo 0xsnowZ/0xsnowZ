@@ -1,39 +1,41 @@
 <div align="center">
 
-<!-- Animated Banner -->
+<!-- Banner -->
 <a href="https://www.snowz.tech/">
   <img src="./assets/banner.svg" width="100%" alt="Mohamed EL GAROUANI — 0xsnowZ" />
 </a>
 
-<p>
-  <em>Software Engineer crafting <strong>secure</strong>, <strong>scalable</strong>, and <strong>user-centric</strong> full-stack web solutions — from pixel-perfect UIs to robust REST APIs.</em>
-</p>
+<br/>
 
 <p>
   <a href="https://www.snowz.tech/">
-    <img src="https://img.shields.io/badge/Portfolio-snowz.tech-0ea5e9?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-snowz.tech-ffffff?style=flat-square&logo=google-chrome&logoColor=000000&labelColor=111111" alt="Portfolio" />
   </a>
+  &nbsp;
   <a href="https://www.linkedin.com/in/mohamed-elgarouani">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-ffffff?style=flat-square&logo=linkedin&logoColor=000000&labelColor=111111" alt="LinkedIn" />
   </a>
+  &nbsp;
   <a href="https://x.com/0xsnow_Z">
-    <img src="https://img.shields.io/badge/X-Follow-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
+    <img src="https://img.shields.io/badge/X-@0xsnow__Z-ffffff?style=flat-square&logo=x&logoColor=000000&labelColor=111111" alt="X" />
   </a>
+  &nbsp;
   <a href="mailto:elgarouani01@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-Contact-ffffff?style=flat-square&logo=gmail&logoColor=000000&labelColor=111111" alt="Email" />
   </a>
 </p>
 
 <p>
-  <img src="https://komarev.com/ghpvc/?username=0xsnowZ&style=flat-square&color=38bdf8&label=Profile+Views" alt="Profile Views" />
-  <img src="https://img.shields.io/github/followers/0xsnowZ?label=Followers&style=flat-square&color=238636&logo=github" alt="Followers" />
+  <img src="https://komarev.com/ghpvc/?username=0xsnowZ&style=flat-square&color=555555&label=Views&abbreviated=true" alt="Profile Views" />
+  &nbsp;
+  <img src="https://img.shields.io/github/followers/0xsnowZ?label=Followers&style=flat-square&color=555555&logo=github&logoColor=white" alt="Followers" />
 </p>
 
 </div>
 
 <br/>
 
-## 👨‍💻 About Me
+## `// about`
 
 ```javascript
 const Mohamed = {
@@ -47,94 +49,72 @@ const Mohamed = {
 };
 ```
 
-- 🔭 **Currently building:** Production-grade full-stack apps with React, Node.js, and PHP/Laravel.
-- 🌱 **Growing in:** Cloud-native architecture, DevOps pipelines, and advanced TypeScript patterns.
-- 🎮 **Side quest:** Developing `pixel-porter` — a 2D indie game built with Godot Engine & GDScript.
-- 💬 **Ask me about:** React · TypeScript · PHP · Laravel · REST API design · Tailwind CSS.
-- 📫 **Reach me:** [linkedin.com/in/mohamed-elgarouani](https://www.linkedin.com/in/mohamed-elgarouani) · [snowz.tech](https://www.snowz.tech/)
+- **Currently building** — Production-grade full-stack apps with React, Node.js, and PHP/Laravel.
+- **Growing in** — Cloud-native architecture, DevOps pipelines, advanced TypeScript patterns.
+- **Side quest** — Developing `pixel-porter`, a 2D indie game with Godot Engine & GDScript.
+- **Ask me about** — React · TypeScript · PHP · Laravel · REST API design · Tailwind CSS.
+- **Reach me** — [linkedin.com/in/mohamed-elgarouani](https://www.linkedin.com/in/mohamed-elgarouani) · [snowz.tech](https://www.snowz.tech/)
 
 <br/>
 
-## 🛠️ Tech Stack
+## `// stack`
 
 <div align="center">
 
-#### Languages & Frameworks
-<p>
-  <img src="https://skillicons.dev/icons?i=js,ts,php,react,redux,nextjs,nodejs,express,laravel,html,css,tailwind,bootstrap&perline=13" alt="Languages & Frameworks" />
-</p>
+<img src="https://skillicons.dev/icons?i=js,ts,php,react,redux,nextjs,nodejs,express,laravel,html,css,tailwind,bootstrap&perline=13&theme=dark" alt="Languages & Frameworks" />
 
-#### Databases, Tools & Platforms
-<p>
-  <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,git,github,docker,postman,linux,bash,godot,figma,vite&perline=12" alt="Databases, Tools & Platforms" />
-</p>
+<br/><br/>
+
+<img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,git,github,docker,postman,linux,bash,godot,figma,vite&perline=12&theme=dark" alt="Tools & Platforms" />
 
 </div>
 
 <br/>
 
-## 🌟 Featured Projects
+## `// projects`
 
 <div align="center">
 
 <table>
   <tr>
-    <td width="50%">
-      <h3 align="center">🌐 Ecavo</h3>
-      <p align="center">
-        Full-stack platform with a rich, interactive frontend and a scalable PHP REST API backend.
-      </p>
-      <p align="center">
+    <td width="50%" valign="top">
+      <h3>🌐 Ecavo</h3>
+      <p>Full-stack platform with a rich interactive frontend and scalable PHP REST API backend.</p>
+      <p>
         <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+        <img src="https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
         <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" />
       </p>
-      <p align="center">
-        <a href="https://github.com/0xsnowZ/ecavo-frontend">Frontend</a> ·
-        <a href="https://github.com/0xsnowZ/ecavo-api">API</a>
-      </p>
+      <a href="https://github.com/0xsnowZ/ecavo-frontend">Frontend</a> · <a href="https://github.com/0xsnowZ/ecavo-api">API</a>
     </td>
-    <td width="50%">
-      <h3 align="center">📊 Absence Manager</h3>
-      <p align="center">
-        Comprehensive absence tracking system with state-driven Redux workflows and a Laravel backend.
-      </p>
-      <p align="center">
+    <td width="50%" valign="top">
+      <h3>📊 Absence Manager</h3>
+      <p>Absence tracking system with Redux state management and a Laravel API backend.</p>
+      <p>
         <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
         <img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=redux&logoColor=white" />
         <img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white" />
       </p>
-      <p align="center">
-        <a href="https://github.com/0xsnowZ/absence-manager--redux">Client</a> ·
-        <a href="https://github.com/0xsnowZ/Absence-Manager-backend">Backend</a>
-      </p>
+      <a href="https://github.com/0xsnowZ/absence-manager--redux">Client</a> · <a href="https://github.com/0xsnowZ/Absence-Manager-backend">Backend</a>
     </td>
   </tr>
   <tr>
-    <td width="50%">
-      <h3 align="center">💼 Career Ops</h3>
-      <p align="center">
-        Operational platform streamlining career workflows, application tracking, and team management.
-      </p>
-      <p align="center">
+    <td width="50%" valign="top">
+      <h3>💼 Career Ops</h3>
+      <p>Operational platform streamlining career workflows, applications, and team management.</p>
+      <p>
         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
       </p>
-      <p align="center">
-        <a href="https://github.com/0xsnowZ/career-ops">View Repo →</a>
-      </p>
+      <a href="https://github.com/0xsnowZ/career-ops">View Repo →</a>
     </td>
-    <td width="50%">
-      <h3 align="center">🎮 Pixel Porter</h3>
-      <p align="center">
-        2D indie game exploring mechanics, physics, and state machines — built entirely in Godot Engine.
-      </p>
-      <p align="center">
+    <td width="50%" valign="top">
+      <h3>🎮 Pixel Porter</h3>
+      <p>2D indie game exploring mechanics, physics, and state machines — built in Godot Engine.</p>
+      <p>
         <img src="https://img.shields.io/badge/Godot-478CBF?style=flat-square&logo=godot-engine&logoColor=white" />
         <img src="https://img.shields.io/badge/GDScript-478CBF?style=flat-square&logo=godot-engine&logoColor=white" />
       </p>
-      <p align="center">
-        <a href="https://github.com/0xsnowZ/pixel-porter">View Repo →</a>
-      </p>
+      <a href="https://github.com/0xsnowZ/pixel-porter">View Repo →</a>
     </td>
   </tr>
 </table>
@@ -143,7 +123,7 @@ const Mohamed = {
 
 <br/>
 
-## ⌘ Commit Activity
+## `// commits`
 
 <p align="center">
   <picture>
@@ -157,20 +137,20 @@ const Mohamed = {
 
 <br/>
 
-## 📊 GitHub Stats
+## `// stats`
 
 <div align="center">
 
-  <img height="165em" src="https://github-readme-stats.vercel.app/api?username=0xsnowZ&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github" alt="GitHub Stats" />
-  <img height="165em" src="https://streak-stats.demolab.com?user=0xsnowZ&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+<img height="165em" src="https://github-readme-stats.vercel.app/api?username=0xsnowZ&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&icon_color=999999&title_color=ffffff&text_color=888888&bg_color=0d0d0d" alt="GitHub Stats" />
+<img height="165em" src="https://streak-stats.demolab.com?user=0xsnowZ&theme=github-dark-blue&hide_border=true&background=0d0d0d&ring=aaaaaa&fire=ffffff&currStreakLabel=888888&sideLabels=888888&currStreakNum=ffffff&sideNums=aaaaaa&dates=555555" alt="Streak Stats" />
 
-  <br/><br/>
+<br/><br/>
 
-  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=0xsnowZ&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&card_width=400" alt="Top Languages" />
+<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=0xsnowZ&layout=compact&theme=github_dark&hide_border=true&langs_count=8&card_width=400&bg_color=0d0d0d&title_color=ffffff&text_color=888888" alt="Top Languages" />
 
-  <br/><br/>
+<br/><br/>
 
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=0xsnowZ&bg_color=1a1b27&color=38bdf8&line=38bdf8&point=ffffff&area=true&hide_border=true&radius=8" alt="Activity Graph" width="95%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=0xsnowZ&bg_color=0d0d0d&color=888888&line=aaaaaa&point=ffffff&area=true&area_color=333333&hide_border=true&radius=6" alt="Activity Graph" width="95%" />
 
 </div>
 
@@ -179,9 +159,13 @@ const Mohamed = {
 ---
 
 <div align="center">
+  <p><strong>Open to collaborations, freelance projects, and exciting opportunities.</strong></p>
   <p>
-    <strong>Open to collaborations, freelance projects, and exciting opportunities.</strong><br/>
-    <a href="https://www.snowz.tech/">snowz.tech</a> · <a href="https://www.linkedin.com/in/mohamed-elgarouani">LinkedIn</a> · <a href="mailto:elgarouani01@gmail.com">elgarouani01@gmail.com</a>
+    <a href="https://www.snowz.tech/">snowz.tech</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/mohamed-elgarouani">LinkedIn</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:elgarouani01@gmail.com">elgarouani01@gmail.com</a>
   </p>
-  <sub><em>while(alive) { learn(); code(); improve(); }</em> — Mohamed EL GAROUANI (0xsnowZ)</sub>
+  <sub><em>while(alive) { learn(); code(); improve(); }</em></sub>
 </div>
