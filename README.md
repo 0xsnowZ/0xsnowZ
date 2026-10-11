@@ -27,7 +27,7 @@
 
 <br/>
 
-## `// stack`
+<img src="./assets/header_stack.svg" alt="// stack" />
 
 <div align="center">
 
@@ -41,7 +41,7 @@
 
 <br/>
 
-## `// projects`
+<img src="./assets/header_projects.svg" alt="// projects" />
 
 <div align="center">
 
@@ -93,7 +93,7 @@
 
 <br/>
 
-## `// commits`
+<img src="./assets/header_commits.svg" alt="// commits" />
 
 <p align="center">
   <picture>
@@ -107,7 +107,7 @@
 
 <br/>
 
-## `// stats`
+<img src="./assets/header_stats.svg" alt="// stats" />
 
 <div align="center">
 

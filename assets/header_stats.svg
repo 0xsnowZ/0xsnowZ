@@ -1,0 +1,22 @@
+<svg width="380" height="38" viewBox="0 0 380 38" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    .lbl { animation: fadeIn 0.8s ease-out both; }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  </style>
+</defs>
+<!-- bg -->
+<rect width="380" height="38" fill="#1e1e1e" rx="5"/>
+<!-- left accent bar -->
+<rect width="4" height="38" fill="#007acc" rx="2"/>
+<!-- slash slash prefix in blue -->
+<text class="lbl" x="18" y="25"
+  font-family="'Courier New',Courier,monospace"
+  font-size="13" fill="#007acc" font-weight="bold">//</text>
+<!-- section name in light -->
+<text class="lbl" x="40" y="25"
+  font-family="'Courier New',Courier,monospace"
+  font-size="13" fill="#cccccc" letter-spacing="2">STATS</text>
+<!-- right faint line -->
+<line x1="110" y1="19" x2="370" y2="19" stroke="#2d2d2d" stroke-width="1"/>
+</svg>
