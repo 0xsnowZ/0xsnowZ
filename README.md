@@ -111,18 +111,14 @@
 
 <div align="center">
 
-<img height="160em" src="https://github-readme-stats.vercel.app/api?username=0xsnowZ&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&icon_color=007acc&title_color=cccccc&text_color=888888&bg_color=1e1e1e" alt="GitHub Stats" />
 <img height="160em" src="https://streak-stats.demolab.com?user=0xsnowZ&theme=github-dark-blue&hide_border=true&background=1e1e1e&ring=007acc&fire=cccccc&currStreakLabel=888888&sideLabels=888888&currStreakNum=cccccc&sideNums=aaaaaa&dates=555555" alt="Streak Stats" />
 
 <br/><br/>
 
 <img height="155em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=0xsnowZ&layout=compact&theme=github_dark&hide_border=true&langs_count=8&card_width=400&bg_color=1e1e1e&title_color=cccccc&text_color=888888" alt="Top Languages" />
 
-<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=0xsnowZ&bg_color=1e1e1e&color=888888&line=007acc&point=cccccc&area=true&area_color=1e3a5f&hide_border=true&radius=4" alt="Activity Graph" width="95%" />
-
 </div>
+
 
 <br/>
 
