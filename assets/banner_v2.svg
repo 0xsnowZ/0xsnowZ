@@ -121,12 +121,14 @@
     <tspan fill="#d4d4d4">,</tspan>
   </text>
 
-  <!-- L5: role -->
+  <!-- L5: role (array) -->
   <text class="l5" y="130">
     <tspan x="79" fill="#9cdcfe">role</tspan>
-    <tspan fill="#d4d4d4">     : </tspan>
+    <tspan fill="#d4d4d4">     : [</tspan>
     <tspan fill="#ce9178">"Software Engineer"</tspan>
-    <tspan fill="#d4d4d4">,</tspan>
+    <tspan fill="#d4d4d4">, </tspan>
+    <tspan fill="#ce9178">"Full-Stack Dev"</tspan>
+    <tspan fill="#d4d4d4">],</tspan>
   </text>
 
   <!-- L6: stack -->
@@ -147,15 +149,16 @@
   <text class="l7" y="166">
     <tspan x="79" fill="#9cdcfe">location</tspan>
     <tspan fill="#d4d4d4"> : </tspan>
-    <tspan fill="#ce9178">"Morocco"</tspan>
+    <tspan fill="#ce9178">"Morocco  ·  Remote-Friendly"</tspan>
     <tspan fill="#d4d4d4">,</tspan>
   </text>
 
-  <!-- L8: contact -->
+  <!-- L8: status (green dot indicator) -->
   <text class="l8" y="184">
-    <tspan x="79" fill="#9cdcfe">contact</tspan>
-    <tspan fill="#d4d4d4">  : </tspan>
-    <tspan fill="#ce9178">"snowz.tech"</tspan>
+    <tspan x="79" fill="#9cdcfe">status</tspan>
+    <tspan fill="#d4d4d4">   : "</tspan>
+    <tspan fill="#27c93f">&#9679;</tspan>
+    <tspan fill="#ce9178"> open to opportunities"</tspan>
     <tspan fill="#d4d4d4">,</tspan>
   </text>
 
@@ -184,12 +187,12 @@
   <rect x="763" y="47"  width="55" height="2.5" fill="#6a9955" rx="1"/>
   <rect x="763" y="58"  width="0"  height="2.5" fill="#d4d4d4" rx="1"/>
   <rect x="763" y="69"  width="42" height="2.5" fill="#569cd6" rx="1"/>
-  <rect x="763" y="80"  width="60" height="2.5" fill="#9cdcfe" rx="1"/>
-  <rect x="763" y="91"  width="50" height="2.5" fill="#ce9178" rx="1"/>
-  <rect x="763" y="102" width="58" height="2.5" fill="#9cdcfe" rx="1"/>
-  <rect x="763" y="113" width="45" height="2.5" fill="#ce9178" rx="1"/>
-  <rect x="763" y="124" width="48" height="2.5" fill="#9cdcfe" rx="1"/>
-  <rect x="763" y="135" width="62" height="2.5" fill="#dcdcaa" rx="1"/>
+  <rect x="763" y="80"  width="62" height="2.5" fill="#ce9178" rx="1"/>
+  <rect x="763" y="91"  width="65" height="2.5" fill="#ce9178" rx="1"/>
+  <rect x="763" y="102" width="68" height="2.5" fill="#ce9178" rx="1"/>
+  <rect x="763" y="113" width="60" height="2.5" fill="#ce9178" rx="1"/>
+  <rect x="763" y="124" width="55" height="2.5" fill="#27c93f" rx="1"/>
+  <rect x="763" y="135" width="50" height="2.5" fill="#ce9178" rx="1"/>
   <rect x="763" y="146" width="22" height="2.5" fill="#d4d4d4" rx="1"/>
 </g>
 <!-- Minimap viewport indicator -->
