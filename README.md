@@ -5,30 +5,27 @@
   <img src="./assets/banner.svg?v=5" width="100%" alt="Mohamed EL GAROUANI — 0xsnowZ" />
 </a>
 
-<br/>
-
 <p>
   <a href="https://www.snowz.tech/">
-    <img src="https://img.shields.io/badge/Portfolio-snowz.tech-ffffff?style=flat-square&logo=google-chrome&logoColor=000000&labelColor=111111" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-snowz.tech-cccccc?style=flat-square&logo=google-chrome&logoColor=1e1e1e&labelColor=2d2d2d" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/mohamed-elgarouani">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-ffffff?style=flat-square&logo=linkedin&logoColor=000000&labelColor=111111" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-cccccc?style=flat-square&logo=linkedin&logoColor=1e1e1e&labelColor=2d2d2d" alt="LinkedIn" />
   </a>
   &nbsp;
   <a href="https://x.com/0xsnow_Z">
-    <img src="https://img.shields.io/badge/X-@0xsnow__Z-ffffff?style=flat-square&logo=x&logoColor=000000&labelColor=111111" alt="X" />
+    <img src="https://img.shields.io/badge/X-@0xsnow__Z-cccccc?style=flat-square&logo=x&logoColor=1e1e1e&labelColor=2d2d2d" alt="X" />
   </a>
   &nbsp;
   <a href="mailto:elgarouani01@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact-ffffff?style=flat-square&logo=gmail&logoColor=000000&labelColor=111111" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-Contact-cccccc?style=flat-square&logo=gmail&logoColor=1e1e1e&labelColor=2d2d2d" alt="Email" />
   </a>
 </p>
 
-
 </div>
 
-
+<br/>
 
 ## `// stack`
 
@@ -51,17 +48,17 @@
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🌐 Ecavo</h3>
+      <h3><code>// ecavo</code></h3>
       <p>Full-stack platform with a rich interactive frontend and scalable PHP REST API backend.</p>
       <p>
         <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
-        <img src="https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
         <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" />
       </p>
       <a href="https://github.com/0xsnowZ/ecavo-frontend">Frontend</a> · <a href="https://github.com/0xsnowZ/ecavo-api">API</a>
     </td>
     <td width="50%" valign="top">
-      <h3>📊 Absence Manager</h3>
+      <h3><code>// absence-manager</code></h3>
       <p>Absence tracking system with Redux state management and a Laravel API backend.</p>
       <p>
         <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
@@ -73,7 +70,7 @@
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>💼 Career Ops</h3>
+      <h3><code>// career-ops</code></h3>
       <p>Operational platform streamlining career workflows, applications, and team management.</p>
       <p>
         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
@@ -81,7 +78,7 @@
       <a href="https://github.com/0xsnowZ/career-ops">View Repo →</a>
     </td>
     <td width="50%" valign="top">
-      <h3>🎮 Pixel Porter</h3>
+      <h3><code>// pixel-porter</code></h3>
       <p>2D indie game exploring mechanics, physics, and state machines — built in Godot Engine.</p>
       <p>
         <img src="https://img.shields.io/badge/Godot-478CBF?style=flat-square&logo=godot-engine&logoColor=white" />
@@ -114,16 +111,16 @@
 
 <div align="center">
 
-<img height="165em" src="https://github-readme-stats.vercel.app/api?username=0xsnowZ&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&icon_color=999999&title_color=ffffff&text_color=888888&bg_color=0d0d0d" alt="GitHub Stats" />
-<img height="165em" src="https://streak-stats.demolab.com?user=0xsnowZ&theme=github-dark-blue&hide_border=true&background=0d0d0d&ring=aaaaaa&fire=ffffff&currStreakLabel=888888&sideLabels=888888&currStreakNum=ffffff&sideNums=aaaaaa&dates=555555" alt="Streak Stats" />
+<img height="160em" src="https://github-readme-stats.vercel.app/api?username=0xsnowZ&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&icon_color=007acc&title_color=cccccc&text_color=888888&bg_color=1e1e1e" alt="GitHub Stats" />
+<img height="160em" src="https://streak-stats.demolab.com?user=0xsnowZ&theme=github-dark-blue&hide_border=true&background=1e1e1e&ring=007acc&fire=cccccc&currStreakLabel=888888&sideLabels=888888&currStreakNum=cccccc&sideNums=aaaaaa&dates=555555" alt="Streak Stats" />
 
 <br/><br/>
 
-<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=0xsnowZ&layout=compact&theme=github_dark&hide_border=true&langs_count=8&card_width=400&bg_color=0d0d0d&title_color=ffffff&text_color=888888" alt="Top Languages" />
+<img height="155em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=0xsnowZ&layout=compact&theme=github_dark&hide_border=true&langs_count=8&card_width=400&bg_color=1e1e1e&title_color=cccccc&text_color=888888" alt="Top Languages" />
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=0xsnowZ&bg_color=0d0d0d&color=888888&line=aaaaaa&point=ffffff&area=true&area_color=333333&hide_border=true&radius=6" alt="Activity Graph" width="95%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=0xsnowZ&bg_color=1e1e1e&color=888888&line=007acc&point=cccccc&area=true&area_color=1e3a5f&hide_border=true&radius=4" alt="Activity Graph" width="95%" />
 
 </div>
 
@@ -132,13 +129,11 @@
 ---
 
 <div align="center">
-  <p><strong>Open to collaborations, freelance projects, and exciting opportunities.</strong></p>
-  <p>
-    <a href="https://www.snowz.tech/">snowz.tech</a>
-    &nbsp;·&nbsp;
-    <a href="https://www.linkedin.com/in/mohamed-elgarouani">LinkedIn</a>
-    &nbsp;·&nbsp;
-    <a href="mailto:elgarouani01@gmail.com">elgarouani01@gmail.com</a>
-  </p>
-  <sub><em>while(alive) { learn(); code(); improve(); }</em></sub>
+  <a href="https://www.snowz.tech/">snowz.tech</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/mohamed-elgarouani">LinkedIn</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:elgarouani01@gmail.com">elgarouani01@gmail.com</a>
+  <br/><br/>
+  <sub><code>while(alive) { learn(); code(); improve(); }</code></sub>
 </div>
