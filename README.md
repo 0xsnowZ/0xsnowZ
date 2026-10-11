@@ -7,19 +7,19 @@
 
 <p>
   <a href="https://www.snowz.tech/">
-    <img src="https://img.shields.io/badge/Portfolio-snowz.tech-cccccc?style=flat-square&logo=googlechrome&logoColor=cccccc&labelColor=2d2d2d" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-snowz.tech-1e1e1e?style=for-the-badge&logo=googlechrome&logoColor=007acc" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/mohamed-elgarouani">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-cccccc?style=flat-square&logo=linkedin&logoColor=cccccc&labelColor=2d2d2d" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   &nbsp;
   <a href="https://x.com/0xsnow_Z">
-    <img src="https://img.shields.io/badge/X-@0xsnow__Z-cccccc?style=flat-square&logo=x&logoColor=cccccc&labelColor=2d2d2d" alt="X" />
+    <img src="https://img.shields.io/badge/X-0xsnow__Z-1e1e1e?style=for-the-badge&logo=x&logoColor=white" alt="X" />
   </a>
   &nbsp;
   <a href="mailto:elgarouani01@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact-cccccc?style=flat-square&logo=gmail&logoColor=cccccc&labelColor=2d2d2d" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-elgarouani01-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 </p>
 
