@@ -1,0 +1,233 @@
+<svg width="830" height="230" viewBox="0 0 830 230" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      /* ── Handle glitch ── */
+      .handle {
+        animation: handleGlitch 8s step-end infinite;
+      }
+      @keyframes handleGlitch {
+        0%, 84%, 100% { opacity: 1; }
+        85%            { opacity: 0.4; }
+        86%            { opacity: 1;   }
+        87%            { opacity: 0.6; }
+        88%            { opacity: 1;   }
+        89%            { opacity: 0.3; }
+        90%            { opacity: 1;   }
+      }
+
+      /* ── Aurora background pulse ── */
+      .aurora-l { animation: auroraPulse 7s ease-in-out infinite; }
+      .aurora-r { animation: auroraPulse 9s ease-in-out infinite reverse; }
+      @keyframes auroraPulse {
+        0%, 100% { opacity: 0.55; }
+        50%       { opacity: 1;    }
+      }
+
+      /* ── Animated border ── */
+      .border-top { animation: borderGlow 4s ease-in-out infinite alternate; }
+      .border-bot { animation: borderGlow 4s ease-in-out infinite alternate-reverse; }
+      @keyframes borderGlow {
+        0%   { opacity: 0.45; }
+        100% { opacity: 1;    }
+      }
+
+      /* ── Text reveal sequence ── */
+      .name   { animation: fadeUp 1.2s cubic-bezier(0.4,0,0.2,1) 0.3s both; }
+      .role   { animation: fadeUp 1.4s cubic-bezier(0.4,0,0.2,1) 1.0s both; }
+      .divider{ animation: fadeIn 1.2s ease-out 1.7s both; }
+      .motto  { animation: fadeIn 1.4s ease-out 2.3s both; }
+      .footer { animation: fadeIn 1.4s ease-out 2.9s both; }
+      @keyframes fadeUp {
+        0%   { opacity: 0; transform: translateY(8px); }
+        100% { opacity: 1; transform: translateY(0);   }
+      }
+      @keyframes fadeIn {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      /* ── Pulsing accent dots ── */
+      .dot-l { animation: dotPulse 2s ease-in-out infinite; }
+      .dot-r { animation: dotPulse 2s ease-in-out infinite reverse; }
+      @keyframes dotPulse {
+        0%, 100% { r: 2.5; opacity: 0.35; }
+        50%       { r: 3.5; opacity: 1;    }
+      }
+    </style>
+
+    <!-- ── Gradients ── -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%"   stop-color="#0d1117"/>
+      <stop offset="50%"  stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+
+    <radialGradient id="auroraL" cx="18%" cy="55%" r="46%">
+      <stop offset="0%"   stop-color="#38bdf8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="auroraR" cx="82%" cy="45%" r="42%">
+      <stop offset="0%"   stop-color="#818cf8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="topBorder" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#38bdf8" stop-opacity="0.85"/>
+      <stop offset="70%"  stop-color="#818cf8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="botBorder" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#818cf8" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#818cf8" stop-opacity="0.6"/>
+      <stop offset="70%"  stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="nameGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#e2e8f0"/>
+      <stop offset="50%"  stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+
+    <linearGradient id="dividerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#38bdf8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- ── Filters ── -->
+    <filter id="cyanGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-12%" y="-25%" width="124%" height="150%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ════ BACKGROUND ════ -->
+  <rect width="830" height="230" fill="url(#bg)" rx="12"/>
+  <rect class="aurora-l" width="830" height="230" fill="url(#auroraL)" rx="12"/>
+  <rect class="aurora-r" width="830" height="230" fill="url(#auroraR)" rx="12"/>
+
+  <!-- Dot-grid sides -->
+  <g fill="#38bdf8" opacity="0.07">
+    <circle cx="40"  cy="30"  r="1.2"/><circle cx="40"  cy="58"  r="1.2"/>
+    <circle cx="40"  cy="86"  r="1.2"/><circle cx="40"  cy="114" r="1.2"/>
+    <circle cx="40"  cy="142" r="1.2"/><circle cx="40"  cy="170" r="1.2"/>
+    <circle cx="40"  cy="198" r="1.2"/>
+    <circle cx="70"  cy="44"  r="1.2"/><circle cx="70"  cy="72"  r="1.2"/>
+    <circle cx="70"  cy="100" r="1.2"/><circle cx="70"  cy="128" r="1.2"/>
+    <circle cx="70"  cy="156" r="1.2"/><circle cx="70"  cy="184" r="1.2"/>
+    <circle cx="100" cy="30"  r="1.2"/><circle cx="100" cy="58"  r="1.2"/>
+    <circle cx="100" cy="86"  r="1.2"/>
+    <circle cx="790" cy="30"  r="1.2"/><circle cx="790" cy="58"  r="1.2"/>
+    <circle cx="790" cy="86"  r="1.2"/><circle cx="790" cy="114" r="1.2"/>
+    <circle cx="790" cy="142" r="1.2"/><circle cx="790" cy="170" r="1.2"/>
+    <circle cx="790" cy="198" r="1.2"/>
+    <circle cx="760" cy="44"  r="1.2"/><circle cx="760" cy="72"  r="1.2"/>
+    <circle cx="760" cy="100" r="1.2"/><circle cx="760" cy="128" r="1.2"/>
+    <circle cx="760" cy="156" r="1.2"/><circle cx="760" cy="184" r="1.2"/>
+    <circle cx="730" cy="30"  r="1.2"/><circle cx="730" cy="58"  r="1.2"/>
+    <circle cx="730" cy="86"  r="1.2"/>
+  </g>
+
+  <!-- Background code fragments -->
+  <text x="22" y="192" font-family="Courier New,monospace" font-size="10"
+        fill="#38bdf8" opacity="0.05" transform="rotate(-14 40 185)">async function</text>
+  <text x="685" y="38" font-family="Courier New,monospace" font-size="9"
+        fill="#818cf8" opacity="0.06" transform="rotate(9 700 36)">import React</text>
+  <text x="715" y="195" font-family="Courier New,monospace" font-size="10"
+        fill="#38bdf8" opacity="0.05">{ ... }</text>
+  <text x="26" y="50" font-family="Courier New,monospace" font-size="9"
+        fill="#818cf8" opacity="0.05">const dev =</text>
+  <text x="725" y="135" font-family="Courier New,monospace" font-size="9"
+        fill="#38bdf8" opacity="0.05">return true</text>
+  <text x="22" y="132" font-family="Courier New,monospace" font-size="9"
+        fill="#818cf8" opacity="0.05">export default</text>
+
+  <!-- ════ BORDERS ════ -->
+  <rect class="border-top" x="0" y="0"     width="830" height="2.5" fill="url(#topBorder)" rx="1"/>
+  <rect class="border-bot" x="0" y="227.5" width="830" height="2.5" fill="url(#botBorder)" rx="1"/>
+
+  <!-- ════ FLOATING PARTICLES (SMIL) ════ -->
+  <circle cx="88"  cy="210" r="2" fill="#38bdf8" opacity="0">
+    <animate attributeName="cy" from="210" to="28" dur="9s"  repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.08;0.88;1" dur="9s"  repeatCount="indefinite"/>
+  </circle>
+  <circle cx="195" cy="220" r="1.5" fill="#818cf8" opacity="0">
+    <animate attributeName="cy" from="220" to="45" dur="12s" repeatCount="indefinite" begin="-4s"/>
+    <animate attributeName="opacity" values="0;0.65;0.65;0" keyTimes="0;0.08;0.88;1" dur="12s" repeatCount="indefinite" begin="-4s"/>
+  </circle>
+  <circle cx="415" cy="225" r="1"   fill="#38bdf8" opacity="0">
+    <animate attributeName="cy" from="225" to="20" dur="15s" repeatCount="indefinite" begin="-7s"/>
+    <animate attributeName="opacity" values="0;0.55;0.55;0" keyTimes="0;0.08;0.88;1" dur="15s" repeatCount="indefinite" begin="-7s"/>
+  </circle>
+  <circle cx="555" cy="215" r="1.5" fill="#818cf8" opacity="0">
+    <animate attributeName="cy" from="215" to="50" dur="11s" repeatCount="indefinite" begin="-2s"/>
+    <animate attributeName="opacity" values="0;0.6;0.6;0"   keyTimes="0;0.08;0.88;1" dur="11s" repeatCount="indefinite" begin="-2s"/>
+  </circle>
+  <circle cx="648" cy="210" r="2"   fill="#38bdf8" opacity="0">
+    <animate attributeName="cy" from="210" to="32" dur="10s" repeatCount="indefinite" begin="-5s"/>
+    <animate attributeName="opacity" values="0;0.75;0.75;0" keyTimes="0;0.08;0.88;1" dur="10s" repeatCount="indefinite" begin="-5s"/>
+  </circle>
+  <circle cx="742" cy="218" r="1.5" fill="#818cf8" opacity="0">
+    <animate attributeName="cy" from="218" to="55" dur="8s"  repeatCount="indefinite" begin="-1s"/>
+    <animate attributeName="opacity" values="0;0.6;0.6;0"   keyTimes="0;0.08;0.88;1" dur="8s"  repeatCount="indefinite" begin="-1s"/>
+  </circle>
+
+  <!-- ════ HANDLE ════ -->
+  <text class="handle" x="415" y="72"
+    font-family="'Courier New', Courier, monospace"
+    font-size="15" fill="#38bdf8" text-anchor="middle"
+    filter="url(#cyanGlow)" letter-spacing="6" font-weight="600">
+    &lt; 0xsnowZ /&gt;
+  </text>
+
+  <!-- Pulsing accent dots flanking the handle -->
+  <circle class="dot-l" cx="278" cy="67" r="2.5" fill="#38bdf8"/>
+  <circle class="dot-r" cx="553" cy="67" r="2.5" fill="#38bdf8"/>
+
+  <!-- ════ MAIN NAME ════ -->
+  <text class="name" x="415" y="124"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-size="40" font-weight="700"
+    fill="url(#nameGrad)" text-anchor="middle"
+    filter="url(#softGlow)" letter-spacing="1.2">
+    Mohamed EL GAROUANI
+  </text>
+
+  <!-- ════ ROLE ════ -->
+  <text class="role" x="415" y="154"
+    font-family="'Courier New', Courier, monospace"
+    font-size="13" fill="#94a3b8" text-anchor="middle" letter-spacing="2.5">
+    Software Engineer  ·  Full-Stack Developer
+  </text>
+
+  <!-- ════ DIVIDER ════ -->
+  <g class="divider">
+    <line x1="225" y1="170" x2="605" y2="170" stroke="url(#dividerGrad)" stroke-width="1"/>
+    <circle cx="225" cy="170" r="2.5" fill="#38bdf8" opacity="0.65"/>
+    <circle cx="605" cy="170" r="2.5" fill="#818cf8" opacity="0.65"/>
+  </g>
+
+  <!-- ════ CODE MOTTO ════ -->
+  <text class="motto" x="415" y="194"
+    font-family="'Courier New', Courier, monospace"
+    font-size="11" fill="#38bdf8" text-anchor="middle"
+    opacity="0.65" letter-spacing="0.5">
+    while(alive) { learn(); code(); improve(); }
+  </text>
+
+  <!-- ════ FOOTER HINT ════ -->
+  <text class="footer" x="415" y="218"
+    font-family="'Courier New', Courier, monospace"
+    font-size="9" fill="#334155" text-anchor="middle" letter-spacing="1.2">
+    Morocco  ·  snowz.tech  ·  @0xsnow_Z
+  </text>
+</svg>

@@ -1,8 +1,8 @@
 <div align="center">
 
-<!-- Dynamic Typing Banner -->
+<!-- Animated Banner -->
 <a href="https://www.snowz.tech/">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&random=false&width=720&height=60&lines=Hi+there+%F0%9F%91%8B+I'm+Mohamed+EL+GAROUANI;Software+Engineer+%26+Full-Stack+Developer;Building+Scalable%2C+Secure+%26+Modern+Web+Apps;while(alive)+%7B+learn()%3B+code()%3B+improve()%3B+%7D" alt="Typing SVG" />
+  <img src="./assets/banner.svg" width="100%" alt="Mohamed EL GAROUANI — 0xsnowZ" />
 </a>
 
 <p>
