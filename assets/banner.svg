@@ -1,233 +1,241 @@
-<svg width="830" height="230" viewBox="0 0 830 230" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      /* ── Handle glitch ── */
-      .handle {
-        animation: handleGlitch 8s step-end infinite;
-      }
-      @keyframes handleGlitch {
-        0%, 84%, 100% { opacity: 1; }
-        85%            { opacity: 0.4; }
-        86%            { opacity: 1;   }
-        87%            { opacity: 0.6; }
-        88%            { opacity: 1;   }
-        89%            { opacity: 0.3; }
-        90%            { opacity: 1;   }
-      }
+<svg width="830" height="250" viewBox="0 0 830 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+  .scan { animation: scan 6s linear infinite; }
+  @keyframes scan {
+    0%   { transform: translateY(-80px); }
+    100% { transform: translateY(340px); }
+  }
+  .bdr { animation: bdrPulse 3.5s ease-in-out infinite alternate; }
+  @keyframes bdrPulse {
+    from { opacity: 0.5; }
+    to   { opacity: 1;   }
+  }
+  .handle {
+    animation: revealFade 1.2s ease-out 0.3s both,
+               handlePulse 3s ease-in-out 2.5s infinite;
+  }
+  @keyframes handlePulse {
+    0%,100% { opacity: 0.72; }
+    50%      { opacity: 1;   }
+  }
+  .glitch-c { opacity:0; animation: glitchC 7s step-end infinite; }
+  .glitch-p { opacity:0; animation: glitchP 7s step-end infinite; }
+  @keyframes glitchC {
+    0%,85%,100% { opacity:0; }
+    86%          { opacity:0.85; }
+    87%          { opacity:0;   }
+    88%          { opacity:0.7; }
+    89%          { opacity:0;   }
+  }
+  @keyframes glitchP {
+    0%,85.5%,100% { opacity:0; }
+    86.5%          { opacity:0.75; }
+    87.5%          { opacity:0;   }
+    88.5%          { opacity:0.6; }
+    89.5%          { opacity:0;   }
+  }
+  .name-txt {
+    animation: revealFade 1.3s ease-out 0.9s both,
+               nameGlow 4.5s ease-in-out 3s infinite;
+  }
+  @keyframes nameGlow {
+    0%,100% { opacity:0.9; }
+    50%      { opacity:1;  }
+  }
+  .r1 { animation: revealFade 1.2s ease-out 0.3s both; }
+  .r2 { animation: revealFade 1.2s ease-out 0.9s both; }
+  .r3 { animation: revealFade 1.2s ease-out 1.5s both; }
+  .r4 { animation: revealFade 1.2s ease-out 2.0s both; }
+  .r5 { animation: revealFade 1.2s ease-out 2.6s both; }
+  .r6 { animation: revealFade 1.2s ease-out 3.1s both; }
+  @keyframes revealFade {
+    from { opacity:0; }
+    to   { opacity:1; }
+  }
+  .und {
+    stroke-dasharray: 430;
+    stroke-dashoffset: 430;
+    animation: drawLine 1.8s ease-out 2s both, undPulse 3.5s ease-in-out 4s infinite;
+  }
+  @keyframes drawLine { to { stroke-dashoffset:0; } }
+  @keyframes undPulse {
+    0%,100% { opacity:0.55; }
+    50%      { opacity:1;   }
+  }
+  .dot-c { animation: dotC 2.5s ease-in-out infinite; }
+  .dot-p { animation: dotP 2.5s ease-in-out infinite; }
+  @keyframes dotC { 0%,100%{opacity:.4;} 50%{opacity:1;} }
+  @keyframes dotP { 0%,100%{opacity:1;} 50%{opacity:.4;} }
+  .au1 { animation: auPulse 7s ease-in-out infinite; }
+  .au2 { animation: auPulse 9s ease-in-out infinite reverse; }
+  .au3 { animation: auPulse 11s ease-in-out 2s infinite; }
+  @keyframes auPulse {
+    0%,100% { opacity:0.5; }
+    50%      { opacity:1;  }
+  }
+  .cr { animation: crPulse 4s ease-in-out infinite; }
+  @keyframes crPulse {
+    0%,100% { opacity:0.3; }
+    50%      { opacity:0.9; }
+  }
+</style>
 
-      /* ── Aurora background pulse ── */
-      .aurora-l { animation: auroraPulse 7s ease-in-out infinite; }
-      .aurora-r { animation: auroraPulse 9s ease-in-out infinite reverse; }
-      @keyframes auroraPulse {
-        0%, 100% { opacity: 0.55; }
-        50%       { opacity: 1;    }
-      }
+<radialGradient id="bg" cx="50%" cy="50%" r="75%">
+  <stop offset="0%"   stop-color="#080d1e"/>
+  <stop offset="100%" stop-color="#020408"/>
+</radialGradient>
+<radialGradient id="au1" cx="12%" cy="30%" r="55%">
+  <stop offset="0%"   stop-color="#00d4ff" stop-opacity=".14"/>
+  <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="au2" cx="88%" cy="25%" r="50%">
+  <stop offset="0%"   stop-color="#ff0080" stop-opacity=".12"/>
+  <stop offset="100%" stop-color="#ff0080" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="au3" cx="50%" cy="95%" r="45%">
+  <stop offset="0%"   stop-color="#6d28d9" stop-opacity=".13"/>
+  <stop offset="100%" stop-color="#6d28d9" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="topBdr" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%"   stop-color="#ff0080" stop-opacity="0"/>
+  <stop offset="20%"  stop-color="#ff0080" stop-opacity=".9"/>
+  <stop offset="50%"  stop-color="#00d4ff" stop-opacity="1"/>
+  <stop offset="80%"  stop-color="#ff0080" stop-opacity=".9"/>
+  <stop offset="100%" stop-color="#ff0080" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="botBdr" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%"   stop-color="#00d4ff" stop-opacity="0"/>
+  <stop offset="20%"  stop-color="#6d28d9" stop-opacity=".7"/>
+  <stop offset="50%"  stop-color="#00d4ff" stop-opacity=".9"/>
+  <stop offset="80%"  stop-color="#6d28d9" stop-opacity=".7"/>
+  <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%"   stop-color="#00d4ff" stop-opacity="0"/>
+  <stop offset="50%"  stop-color="#00d4ff" stop-opacity=".055"/>
+  <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="undGrad" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0%"   stop-color="#ff0080" stop-opacity="0"/>
+  <stop offset="25%"  stop-color="#00d4ff" stop-opacity="1"/>
+  <stop offset="75%"  stop-color="#00d4ff" stop-opacity="1"/>
+  <stop offset="100%" stop-color="#ff0080" stop-opacity="0"/>
+</linearGradient>
+<filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="nameFlt" x="-10%" y="-20%" width="120%" height="140%">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
 
-      /* ── Animated border ── */
-      .border-top { animation: borderGlow 4s ease-in-out infinite alternate; }
-      .border-bot { animation: borderGlow 4s ease-in-out infinite alternate-reverse; }
-      @keyframes borderGlow {
-        0%   { opacity: 0.45; }
-        100% { opacity: 1;    }
-      }
+<!-- BACKGROUND -->
+<rect width="830" height="250" fill="url(#bg)" rx="12"/>
+<rect class="au1" width="830" height="250" fill="url(#au1)" rx="12"/>
+<rect class="au2" width="830" height="250" fill="url(#au2)" rx="12"/>
+<rect class="au3" width="830" height="250" fill="url(#au3)" rx="12"/>
 
-      /* ── Text reveal sequence ── */
-      .name   { animation: fadeUp 1.2s cubic-bezier(0.4,0,0.2,1) 0.3s both; }
-      .role   { animation: fadeUp 1.4s cubic-bezier(0.4,0,0.2,1) 1.0s both; }
-      .divider{ animation: fadeIn 1.2s ease-out 1.7s both; }
-      .motto  { animation: fadeIn 1.4s ease-out 2.3s both; }
-      .footer { animation: fadeIn 1.4s ease-out 2.9s both; }
-      @keyframes fadeUp {
-        0%   { opacity: 0; transform: translateY(8px); }
-        100% { opacity: 1; transform: translateY(0);   }
-      }
-      @keyframes fadeIn {
-        0%   { opacity: 0; }
-        100% { opacity: 1; }
-      }
+<!-- SCAN BEAM -->
+<rect class="scan" width="830" height="80" fill="url(#scanGrad)"/>
 
-      /* ── Pulsing accent dots ── */
-      .dot-l { animation: dotPulse 2s ease-in-out infinite; }
-      .dot-r { animation: dotPulse 2s ease-in-out infinite reverse; }
-      @keyframes dotPulse {
-        0%, 100% { r: 2.5; opacity: 0.35; }
-        50%       { r: 3.5; opacity: 1;    }
-      }
-    </style>
+<!-- MATRIX RAIN – LEFT (cyan) -->
+<g font-family="'Courier New',Courier,monospace" font-size="12" fill="#00d4ff" text-anchor="middle">
+  <g><text x="20" y="0" opacity="1.0">0</text><text x="20" y="15" opacity=".7">x</text><text x="20" y="30" opacity=".4">F</text><text x="20" y="45" opacity=".2">3</text><text x="20" y="60" opacity=".07">A</text><animateTransform attributeName="transform" type="translate" from="0,-70" to="0,310" dur="4.2s" repeatCount="indefinite"/></g>
+  <g><text x="20" y="0" opacity=".8">1</text><text x="20" y="15" opacity=".5">B</text><text x="20" y="30" opacity=".25">7</text><text x="20" y="45" opacity=".1">0</text><animateTransform attributeName="transform" type="translate" from="0,-155" to="0,310" dur="4.2s" repeatCount="indefinite" begin="-2.1s"/></g>
+  <g><text x="44" y="0" opacity="1.0">E</text><text x="44" y="15" opacity=".65">5</text><text x="44" y="30" opacity=".35">C</text><text x="44" y="45" opacity=".15">9</text><animateTransform attributeName="transform" type="translate" from="0,-40" to="0,310" dur="5.3s" repeatCount="indefinite" begin="-1.2s"/></g>
+  <g><text x="44" y="0" opacity=".7">2</text><text x="44" y="15" opacity=".4">A</text><text x="44" y="30" opacity=".18">D</text><animateTransform attributeName="transform" type="translate" from="0,-190" to="0,310" dur="5.3s" repeatCount="indefinite" begin="-3.7s"/></g>
+  <g><text x="68" y="0" opacity=".9">F</text><text x="68" y="15" opacity=".55">8</text><text x="68" y="30" opacity=".28">1</text><animateTransform attributeName="transform" type="translate" from="0,-100" to="0,310" dur="6.1s" repeatCount="indefinite" begin="-0.8s"/></g>
+  <g><text x="68" y="0" opacity=".6">4</text><text x="68" y="15" opacity=".3">7</text><animateTransform attributeName="transform" type="translate" from="0,-230" to="0,310" dur="6.1s" repeatCount="indefinite" begin="-4.5s"/></g>
+</g>
 
-    <!-- ── Gradients ── -->
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%"   stop-color="#0d1117"/>
-      <stop offset="50%"  stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#0d1117"/>
-    </linearGradient>
+<!-- MATRIX RAIN – RIGHT (pink) -->
+<g font-family="'Courier New',Courier,monospace" font-size="12" fill="#ff0080" text-anchor="middle">
+  <g><text x="810" y="0" opacity="1.0">9</text><text x="810" y="15" opacity=".65">E</text><text x="810" y="30" opacity=".35">B</text><text x="810" y="45" opacity=".15">5</text><animateTransform attributeName="transform" type="translate" from="0,-85" to="0,310" dur="4.6s" repeatCount="indefinite" begin="-0.4s"/></g>
+  <g><text x="810" y="0" opacity=".75">D</text><text x="810" y="15" opacity=".45">6</text><text x="810" y="30" opacity=".2">2</text><animateTransform attributeName="transform" type="translate" from="0,-170" to="0,310" dur="4.6s" repeatCount="indefinite" begin="-2.8s"/></g>
+  <g><text x="786" y="0" opacity=".9">7</text><text x="786" y="15" opacity=".55">3</text><text x="786" y="30" opacity=".28">F</text><text x="786" y="45" opacity=".1">8</text><animateTransform attributeName="transform" type="translate" from="0,-55" to="0,310" dur="5.7s" repeatCount="indefinite" begin="-1.8s"/></g>
+  <g><text x="786" y="0" opacity=".65">A</text><text x="786" y="15" opacity=".35">0</text><animateTransform attributeName="transform" type="translate" from="0,-200" to="0,310" dur="5.7s" repeatCount="indefinite" begin="-4.2s"/></g>
+  <g><text x="762" y="0" opacity=".8">C</text><text x="762" y="15" opacity=".5">1</text><text x="762" y="30" opacity=".24">6</text><animateTransform attributeName="transform" type="translate" from="0,-120" to="0,310" dur="6.4s" repeatCount="indefinite" begin="-2.5s"/></g>
+  <g><text x="762" y="0" opacity=".5">4</text><text x="762" y="15" opacity=".22">B</text><animateTransform attributeName="transform" type="translate" from="0,-250" to="0,310" dur="6.4s" repeatCount="indefinite" begin="-5s"/></g>
+</g>
 
-    <radialGradient id="auroraL" cx="18%" cy="55%" r="46%">
-      <stop offset="0%"   stop-color="#38bdf8" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
-    </radialGradient>
+<!-- BORDERS -->
+<rect class="bdr" x="0" y="0"     width="830" height="2.5" fill="url(#topBdr)" rx="1"/>
+<rect class="bdr" x="0" y="247.5" width="830" height="2.5" fill="url(#botBdr)" rx="1" style="animation-direction:reverse"/>
 
-    <radialGradient id="auroraR" cx="82%" cy="45%" r="42%">
-      <stop offset="0%"   stop-color="#818cf8" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
-    </radialGradient>
+<!-- CORNER BRACKETS -->
+<g class="cr" stroke="#00d4ff" stroke-width="1.8" fill="none"><line x1="14" y1="15" x2="14" y2="36"/><line x1="14" y1="15" x2="35" y2="15"/></g>
+<g class="cr" stroke="#ff0080" stroke-width="1.8" fill="none" style="animation-delay:-2s"><line x1="816" y1="15" x2="816" y2="36"/><line x1="795" y1="15" x2="816" y2="15"/></g>
+<g class="cr" stroke="#6d28d9" stroke-width="1.8" fill="none" style="animation-delay:-1s"><line x1="14" y1="235" x2="14" y2="214"/><line x1="14" y1="235" x2="35" y2="235"/></g>
+<g class="cr" stroke="#00d4ff" stroke-width="1.8" fill="none" style="animation-delay:-3s"><line x1="816" y1="235" x2="816" y2="214"/><line x1="795" y1="235" x2="816" y2="235"/></g>
 
-    <linearGradient id="topBorder" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#38bdf8" stop-opacity="0"/>
-      <stop offset="30%"  stop-color="#38bdf8" stop-opacity="0.85"/>
-      <stop offset="70%"  stop-color="#818cf8" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
-    </linearGradient>
+<!-- FLOATING PARTICLES -->
+<circle cx="138" cy="245" r="2"   fill="#00d4ff" opacity="0"><animate attributeName="cy" from="245" to="8"  dur="8s"  repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.06;.9;1" dur="8s"  repeatCount="indefinite"/></circle>
+<circle cx="268" cy="242" r="1.5" fill="#ff0080" opacity="0"><animate attributeName="cy" from="242" to="15" dur="11s" repeatCount="indefinite" begin="-4s"/><animate attributeName="opacity" values="0;.85;.85;0" keyTimes="0;.06;.9;1" dur="11s" repeatCount="indefinite" begin="-4s"/></circle>
+<circle cx="415" cy="248" r="1.5" fill="#00d4ff" opacity="0"><animate attributeName="cy" from="248" to="5"  dur="14s" repeatCount="indefinite" begin="-7s"/><animate attributeName="opacity" values="0;.7;.7;0" keyTimes="0;.06;.9;1" dur="14s" repeatCount="indefinite" begin="-7s"/></circle>
+<circle cx="562" cy="244" r="2"   fill="#6d28d9" opacity="0"><animate attributeName="cy" from="244" to="12" dur="9s"  repeatCount="indefinite" begin="-2s"/><animate attributeName="opacity" values="0;.9;.9;0" keyTimes="0;.06;.9;1" dur="9s"  repeatCount="indefinite" begin="-2s"/></circle>
+<circle cx="690" cy="246" r="1.5" fill="#00d4ff" opacity="0"><animate attributeName="cy" from="246" to="10" dur="10s" repeatCount="indefinite" begin="-5s"/><animate attributeName="opacity" values="0;.8;.8;0" keyTimes="0;.06;.9;1" dur="10s" repeatCount="indefinite" begin="-5s"/></circle>
+<circle cx="350" cy="243" r="1"   fill="#ff0080" opacity="0"><animate attributeName="cy" from="243" to="30" dur="12s" repeatCount="indefinite" begin="-9s"/><animate attributeName="opacity" values="0;.65;.65;0" keyTimes="0;.06;.9;1" dur="12s" repeatCount="indefinite" begin="-9s"/></circle>
+<circle cx="490" cy="247" r="1"   fill="#ff0080" opacity="0"><animate attributeName="cy" from="247" to="20" dur="13s" repeatCount="indefinite" begin="-3s"/><animate attributeName="opacity" values="0;.6;.6;0" keyTimes="0;.06;.9;1" dur="13s" repeatCount="indefinite" begin="-3s"/></circle>
 
-    <linearGradient id="botBorder" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#818cf8" stop-opacity="0"/>
-      <stop offset="30%"  stop-color="#818cf8" stop-opacity="0.6"/>
-      <stop offset="70%"  stop-color="#38bdf8" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
-    </linearGradient>
+<!-- HANDLE -->
+<text class="handle" x="415" y="76"
+  font-family="'Courier New',Courier,monospace"
+  font-size="14" fill="#00d4ff" text-anchor="middle"
+  filter="url(#cyanGlow)" letter-spacing="7" font-weight="600">
+  &lt; 0xsnowZ /&gt;
+</text>
 
-    <linearGradient id="nameGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#e2e8f0"/>
-      <stop offset="50%"  stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#cbd5e1"/>
-    </linearGradient>
+<!-- NAME GLITCH SHADOWS -->
+<text class="glitch-c" x="411" y="145"
+  font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+  font-size="46" font-weight="900" fill="#00d4ff" text-anchor="middle">
+  Mohamed EL GAROUANI
+</text>
+<text class="glitch-p" x="419" y="145"
+  font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+  font-size="46" font-weight="900" fill="#ff0080" text-anchor="middle">
+  Mohamed EL GAROUANI
+</text>
 
-    <linearGradient id="dividerGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#38bdf8" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="#38bdf8" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
-    </linearGradient>
+<!-- MAIN NAME -->
+<text class="name-txt" x="415" y="145"
+  font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+  font-size="46" font-weight="900"
+  fill="#ffffff" text-anchor="middle"
+  filter="url(#nameFlt)">
+  Mohamed EL GAROUANI
+</text>
 
-    <!-- ── Filters ── -->
-    <filter id="cyanGlow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+<!-- ROLE -->
+<text class="r3" x="415" y="172"
+  font-family="'Courier New',Courier,monospace"
+  font-size="12" fill="#475569" text-anchor="middle" letter-spacing="3.5">
+  Software Engineer  ·  Full-Stack Developer
+</text>
 
-    <filter id="softGlow" x="-12%" y="-25%" width="124%" height="150%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
+<!-- ANIMATED UNDERLINE -->
+<g class="r4">
+  <line class="und" x1="210" y1="187" x2="620" y2="187" stroke="url(#undGrad)" stroke-width="1.8"/>
+  <circle class="dot-c" cx="210" cy="187" r="2.5" fill="#00d4ff"/>
+  <circle class="dot-p" cx="620" cy="187" r="2.5" fill="#ff0080"/>
+</g>
 
-  <!-- ════ BACKGROUND ════ -->
-  <rect width="830" height="230" fill="url(#bg)" rx="12"/>
-  <rect class="aurora-l" width="830" height="230" fill="url(#auroraL)" rx="12"/>
-  <rect class="aurora-r" width="830" height="230" fill="url(#auroraR)" rx="12"/>
+<!-- MOTTO -->
+<text class="r5" x="415" y="212"
+  font-family="'Courier New',Courier,monospace"
+  font-size="10.5" fill="#00d4ff" text-anchor="middle"
+  opacity="0.6" letter-spacing="0.5">
+  while(alive) { learn(); code(); improve(); }
+</text>
 
-  <!-- Dot-grid sides -->
-  <g fill="#38bdf8" opacity="0.07">
-    <circle cx="40"  cy="30"  r="1.2"/><circle cx="40"  cy="58"  r="1.2"/>
-    <circle cx="40"  cy="86"  r="1.2"/><circle cx="40"  cy="114" r="1.2"/>
-    <circle cx="40"  cy="142" r="1.2"/><circle cx="40"  cy="170" r="1.2"/>
-    <circle cx="40"  cy="198" r="1.2"/>
-    <circle cx="70"  cy="44"  r="1.2"/><circle cx="70"  cy="72"  r="1.2"/>
-    <circle cx="70"  cy="100" r="1.2"/><circle cx="70"  cy="128" r="1.2"/>
-    <circle cx="70"  cy="156" r="1.2"/><circle cx="70"  cy="184" r="1.2"/>
-    <circle cx="100" cy="30"  r="1.2"/><circle cx="100" cy="58"  r="1.2"/>
-    <circle cx="100" cy="86"  r="1.2"/>
-    <circle cx="790" cy="30"  r="1.2"/><circle cx="790" cy="58"  r="1.2"/>
-    <circle cx="790" cy="86"  r="1.2"/><circle cx="790" cy="114" r="1.2"/>
-    <circle cx="790" cy="142" r="1.2"/><circle cx="790" cy="170" r="1.2"/>
-    <circle cx="790" cy="198" r="1.2"/>
-    <circle cx="760" cy="44"  r="1.2"/><circle cx="760" cy="72"  r="1.2"/>
-    <circle cx="760" cy="100" r="1.2"/><circle cx="760" cy="128" r="1.2"/>
-    <circle cx="760" cy="156" r="1.2"/><circle cx="760" cy="184" r="1.2"/>
-    <circle cx="730" cy="30"  r="1.2"/><circle cx="730" cy="58"  r="1.2"/>
-    <circle cx="730" cy="86"  r="1.2"/>
-  </g>
+<!-- FOOTER -->
+<text class="r6" x="415" y="236"
+  font-family="'Courier New',Courier,monospace"
+  font-size="9" fill="#1e293b" text-anchor="middle" letter-spacing="1.8">
+  Morocco  ·  snowz.tech  ·  @0xsnow_Z
+</text>
 
-  <!-- Background code fragments -->
-  <text x="22" y="192" font-family="Courier New,monospace" font-size="10"
-        fill="#38bdf8" opacity="0.05" transform="rotate(-14 40 185)">async function</text>
-  <text x="685" y="38" font-family="Courier New,monospace" font-size="9"
-        fill="#818cf8" opacity="0.06" transform="rotate(9 700 36)">import React</text>
-  <text x="715" y="195" font-family="Courier New,monospace" font-size="10"
-        fill="#38bdf8" opacity="0.05">{ ... }</text>
-  <text x="26" y="50" font-family="Courier New,monospace" font-size="9"
-        fill="#818cf8" opacity="0.05">const dev =</text>
-  <text x="725" y="135" font-family="Courier New,monospace" font-size="9"
-        fill="#38bdf8" opacity="0.05">return true</text>
-  <text x="22" y="132" font-family="Courier New,monospace" font-size="9"
-        fill="#818cf8" opacity="0.05">export default</text>
-
-  <!-- ════ BORDERS ════ -->
-  <rect class="border-top" x="0" y="0"     width="830" height="2.5" fill="url(#topBorder)" rx="1"/>
-  <rect class="border-bot" x="0" y="227.5" width="830" height="2.5" fill="url(#botBorder)" rx="1"/>
-
-  <!-- ════ FLOATING PARTICLES (SMIL) ════ -->
-  <circle cx="88"  cy="210" r="2" fill="#38bdf8" opacity="0">
-    <animate attributeName="cy" from="210" to="28" dur="9s"  repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.08;0.88;1" dur="9s"  repeatCount="indefinite"/>
-  </circle>
-  <circle cx="195" cy="220" r="1.5" fill="#818cf8" opacity="0">
-    <animate attributeName="cy" from="220" to="45" dur="12s" repeatCount="indefinite" begin="-4s"/>
-    <animate attributeName="opacity" values="0;0.65;0.65;0" keyTimes="0;0.08;0.88;1" dur="12s" repeatCount="indefinite" begin="-4s"/>
-  </circle>
-  <circle cx="415" cy="225" r="1"   fill="#38bdf8" opacity="0">
-    <animate attributeName="cy" from="225" to="20" dur="15s" repeatCount="indefinite" begin="-7s"/>
-    <animate attributeName="opacity" values="0;0.55;0.55;0" keyTimes="0;0.08;0.88;1" dur="15s" repeatCount="indefinite" begin="-7s"/>
-  </circle>
-  <circle cx="555" cy="215" r="1.5" fill="#818cf8" opacity="0">
-    <animate attributeName="cy" from="215" to="50" dur="11s" repeatCount="indefinite" begin="-2s"/>
-    <animate attributeName="opacity" values="0;0.6;0.6;0"   keyTimes="0;0.08;0.88;1" dur="11s" repeatCount="indefinite" begin="-2s"/>
-  </circle>
-  <circle cx="648" cy="210" r="2"   fill="#38bdf8" opacity="0">
-    <animate attributeName="cy" from="210" to="32" dur="10s" repeatCount="indefinite" begin="-5s"/>
-    <animate attributeName="opacity" values="0;0.75;0.75;0" keyTimes="0;0.08;0.88;1" dur="10s" repeatCount="indefinite" begin="-5s"/>
-  </circle>
-  <circle cx="742" cy="218" r="1.5" fill="#818cf8" opacity="0">
-    <animate attributeName="cy" from="218" to="55" dur="8s"  repeatCount="indefinite" begin="-1s"/>
-    <animate attributeName="opacity" values="0;0.6;0.6;0"   keyTimes="0;0.08;0.88;1" dur="8s"  repeatCount="indefinite" begin="-1s"/>
-  </circle>
-
-  <!-- ════ HANDLE ════ -->
-  <text class="handle" x="415" y="72"
-    font-family="'Courier New', Courier, monospace"
-    font-size="15" fill="#38bdf8" text-anchor="middle"
-    filter="url(#cyanGlow)" letter-spacing="6" font-weight="600">
-    &lt; 0xsnowZ /&gt;
-  </text>
-
-  <!-- Pulsing accent dots flanking the handle -->
-  <circle class="dot-l" cx="278" cy="67" r="2.5" fill="#38bdf8"/>
-  <circle class="dot-r" cx="553" cy="67" r="2.5" fill="#38bdf8"/>
-
-  <!-- ════ MAIN NAME ════ -->
-  <text class="name" x="415" y="124"
-    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
-    font-size="40" font-weight="700"
-    fill="url(#nameGrad)" text-anchor="middle"
-    filter="url(#softGlow)" letter-spacing="1.2">
-    Mohamed EL GAROUANI
-  </text>
-
-  <!-- ════ ROLE ════ -->
-  <text class="role" x="415" y="154"
-    font-family="'Courier New', Courier, monospace"
-    font-size="13" fill="#94a3b8" text-anchor="middle" letter-spacing="2.5">
-    Software Engineer  ·  Full-Stack Developer
-  </text>
-
-  <!-- ════ DIVIDER ════ -->
-  <g class="divider">
-    <line x1="225" y1="170" x2="605" y2="170" stroke="url(#dividerGrad)" stroke-width="1"/>
-    <circle cx="225" cy="170" r="2.5" fill="#38bdf8" opacity="0.65"/>
-    <circle cx="605" cy="170" r="2.5" fill="#818cf8" opacity="0.65"/>
-  </g>
-
-  <!-- ════ CODE MOTTO ════ -->
-  <text class="motto" x="415" y="194"
-    font-family="'Courier New', Courier, monospace"
-    font-size="11" fill="#38bdf8" text-anchor="middle"
-    opacity="0.65" letter-spacing="0.5">
-    while(alive) { learn(); code(); improve(); }
-  </text>
-
-  <!-- ════ FOOTER HINT ════ -->
-  <text class="footer" x="415" y="218"
-    font-family="'Courier New', Courier, monospace"
-    font-size="9" fill="#334155" text-anchor="middle" letter-spacing="1.2">
-    Morocco  ·  snowz.tech  ·  @0xsnow_Z
-  </text>
 </svg>
