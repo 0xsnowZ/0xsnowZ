@@ -2,7 +2,7 @@
 
 <!-- Banner -->
 <a href="https://www.snowz.tech/">
-  <img src="./assets/banner.svg" width="100%" alt="Mohamed EL GAROUANI — 0xsnowZ" />
+  <img src="./assets/banner.svg?v=4" width="100%" alt="Mohamed EL GAROUANI — 0xsnowZ" />
 </a>
 
 <br/>
