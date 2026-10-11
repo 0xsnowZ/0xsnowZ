@@ -31,13 +31,21 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=js,ts,php,react,redux,nextjs,nodejs,express,laravel,html,css,tailwind,bootstrap&perline=13&theme=dark" alt="Languages & Frameworks" />
+<p><sub><b>Languages</b></sub></p>
+<img src="https://skillicons.dev/icons?i=js,ts,php,html,css&perline=5&theme=dark" alt="Languages" />
 
-<br/><br/>
+<br/>
 
-<img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,git,github,docker,postman,linux,bash,godot,figma,vite&perline=12&theme=dark" alt="Tools & Platforms" />
+<p><sub><b>Frameworks &amp; Libraries</b></sub></p>
+<img src="https://skillicons.dev/icons?i=react,redux,nextjs,nodejs,express,laravel,tailwind,bootstrap&perline=8&theme=dark" alt="Frameworks & Libraries" />
+
+<br/>
+
+<p><sub><b>Tools &amp; Platforms</b></sub></p>
+<img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,git,github,docker,postman,linux,bash,figma,vite,godot&perline=12&theme=dark" alt="Tools & Platforms" />
 
 </div>
+
 
 <br/>
 
