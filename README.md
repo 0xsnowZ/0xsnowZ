@@ -28,29 +28,7 @@
 
 </div>
 
-<br/>
 
-## `// about`
-
-```javascript
-const Mohamed = {
-  handle    : "0xsnowZ",
-  role      : "Software Engineer · Full-Stack Developer",
-  location  : "Morocco 🇲🇦",
-  portfolio : "https://www.snowz.tech",
-  focus     : ["High-Performance Web Apps", "Scalable REST APIs", "Clean Architecture"],
-  interests : ["Design Systems", "DX Tooling", "Indie Game Dev (Godot)"],
-  motto     : () => { while (alive) { learn(); code(); improve(); } }
-};
-```
-
-- **Currently building** — Production-grade full-stack apps with React, Node.js, and PHP/Laravel.
-- **Growing in** — Cloud-native architecture, DevOps pipelines, advanced TypeScript patterns.
-- **Side quest** — Developing `pixel-porter`, a 2D indie game with Godot Engine & GDScript.
-- **Ask me about** — React · TypeScript · PHP · Laravel · REST API design · Tailwind CSS.
-- **Reach me** — [linkedin.com/in/mohamed-elgarouani](https://www.linkedin.com/in/mohamed-elgarouani) · [snowz.tech](https://www.snowz.tech/)
-
-<br/>
 
 ## `// stack`
 
