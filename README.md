@@ -131,5 +131,5 @@
   &nbsp;·&nbsp;
   <a href="mailto:elgarouani01@gmail.com">elgarouani01@gmail.com</a>
   <br/><br/>
-  <sub><code>while(alive) { learn(); code(); improve(); }</code></sub>
+  <sub><code>"Trust The Process"</code></sub>
 </div>

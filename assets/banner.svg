@@ -163,13 +163,7 @@
   <text class="l9" y="202">
     <tspan x="79" fill="#9cdcfe">motto</tspan>
     <tspan fill="#d4d4d4">    : </tspan>
-    <tspan fill="#dcdcaa">() =></tspan>
-    <tspan fill="#569cd6"> while</tspan>
-    <tspan fill="#d4d4d4">(alive) { </tspan>
-    <tspan fill="#dcdcaa">learn</tspan>
-    <tspan fill="#d4d4d4">(); </tspan>
-    <tspan fill="#dcdcaa">code</tspan>
-    <tspan fill="#d4d4d4">(); }</tspan>
+    <tspan fill="#ce9178">"Trust The Process"</tspan>
   </text>
 
   <!-- L10: }; -->
