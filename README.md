@@ -25,11 +25,6 @@
   </a>
 </p>
 
-<p>
-  <img src="https://komarev.com/ghpvc/?username=0xsnowZ&style=flat-square&color=555555&label=Views&abbreviated=true" alt="Profile Views" />
-  &nbsp;
-  <img src="https://img.shields.io/github/followers/0xsnowZ?label=Followers&style=flat-square&color=555555&logo=github&logoColor=white" alt="Followers" />
-</p>
 
 </div>
 
