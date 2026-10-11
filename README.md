@@ -72,14 +72,17 @@ const developer = {
 
 ---
 
-### 🌟 Featured Projects
+<h2 align="center">⌘ Commit Activity</h2>
 
-| Project | Description | Tech Stack | Repository |
-| :--- | :--- | :--- | :---: |
-| 🌐 **[Ecavo](https://github.com/0xsnowZ/ecavo-frontend)** | Full-stack modern web solution with rich UI & robust backend. | `React` `JavaScript` `PHP API` | [Frontend](https://github.com/0xsnowZ/ecavo-frontend) / [API](https://github.com/0xsnowZ/ecavo-api) |
-| 📊 **[Absence Manager](https://github.com/0xsnowZ/absence-manager--redux)** | Comprehensive absence management system with state-driven workflows. | `React` `Redux` `Laravel / PHP` | [Client](https://github.com/0xsnowZ/absence-manager--redux) / [Backend](https://github.com/0xsnowZ/Absence-Manager-backend) |
-| 💼 **[Career Ops](https://github.com/0xsnowZ/career-ops)** | Operational platform designed to streamline career workflows and applications. | `JavaScript` `Modern Web` | [Repo](https://github.com/0xsnowZ/career-ops) |
-| 🎮 **[Pixel Porter](https://github.com/0xsnowZ/pixel-porter)** | 2D indie game experiment testing mechanics, state machines, and physics. | `Godot Engine` `GDScript` | [Repo](https://github.com/0xsnowZ/pixel-porter) |
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/0xsnowZ/0xsnowZ/output/pacman-contribution-graph-dark.svg">
+    <source media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/0xsnowZ/0xsnowZ/output/pacman-contribution-graph.svg">
+    <img src="https://raw.githubusercontent.com/0xsnowZ/0xsnowZ/output/pacman-contribution-graph-dark.svg" alt="Pac-Man Commit Activity" />
+  </picture>
+</p>
 
 ---
 
