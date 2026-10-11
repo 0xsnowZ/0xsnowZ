@@ -7,7 +7,7 @@
 
 <p>
   <a href="https://www.snowz.tech/">
-    <img src="https://img.shields.io/badge/Portfolio-snowz.tech-1e1e1e?style=for-the-badge&logo=googlechrome&logoColor=007acc" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-snowz.tech-007acc?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/mohamed-elgarouani">
@@ -15,7 +15,7 @@
   </a>
   &nbsp;
   <a href="https://x.com/0xsnow_Z">
-    <img src="https://img.shields.io/badge/X-0xsnow__Z-1e1e1e?style=for-the-badge&logo=x&logoColor=white" alt="X" />
+    <img src="https://img.shields.io/badge/X-0xsnow__Z-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
   </a>
   &nbsp;
   <a href="mailto:elgarouani01@gmail.com">
