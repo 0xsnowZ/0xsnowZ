@@ -119,8 +119,4 @@
 
 <br/>
 
----
-
-<div align="center">
-  <sub><code>"Trust The Process"</code></sub>
-</div>
+<img src="./assets/footer.svg" width="100%" alt="footer" />
