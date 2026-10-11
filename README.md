@@ -32,7 +32,7 @@
 <div align="center">
 
 <p><sub><b>Languages</b></sub></p>
-<img src="https://skillicons.dev/icons?i=js,ts,php,html,css&perline=5&theme=dark" alt="Languages" />
+<img src="https://skillicons.dev/icons?i=js,ts,php,python,html,css&perline=6&theme=dark" alt="Languages" />
 
 <br/>
 
