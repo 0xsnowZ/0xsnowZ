@@ -27,7 +27,9 @@
 
 <br/>
 
-<img src="./assets/header_stack.svg" alt="// stack" />
+<div align="center">
+  <img src="./assets/header_stack.svg" alt="// stack" />
+</div>
 
 <div align="center">
 
@@ -41,7 +43,9 @@
 
 <br/>
 
-<img src="./assets/header_projects.svg" alt="// projects" />
+<div align="center">
+  <img src="./assets/header_projects.svg" alt="// projects" />
+</div>
 
 <div align="center">
 
@@ -93,7 +97,9 @@
 
 <br/>
 
-<img src="./assets/header_commits.svg" alt="// commits" />
+<div align="center">
+  <img src="./assets/header_commits.svg" alt="// commits" />
+</div>
 
 <p align="center">
   <picture>
@@ -107,28 +113,22 @@
 
 <br/>
 
-<img src="./assets/header_stats.svg" alt="// stats" />
+<div align="center">
+  <img src="./assets/header_stats.svg" alt="// stats" />
+</div>
 
 <div align="center">
 
-<img height="160em" src="https://streak-stats.demolab.com?user=0xsnowZ&theme=github-dark-blue&hide_border=true&background=1e1e1e&ring=007acc&fire=cccccc&currStreakLabel=888888&sideLabels=888888&currStreakNum=cccccc&sideNums=aaaaaa&dates=555555" alt="Streak Stats" />
+<img height="160em" src="https://streak-stats.demolab.com?user=0xsnowZ&theme=dark&hide_border=true&background=1e1e1e&ring=007acc&fire=cccccc&currStreakLabel=888888&sideLabels=888888&currStreakNum=cccccc&sideNums=aaaaaa&dates=555555" alt="Streak Stats" />
 &nbsp;
 <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=0xsnowZ&layout=compact&theme=github_dark&hide_border=true&langs_count=8&card_width=340&bg_color=1e1e1e&title_color=cccccc&text_color=888888" alt="Top Languages" />
 
 </div>
-
-
 
 <br/>
 
 ---
 
 <div align="center">
-  <a href="https://www.snowz.tech/">snowz.tech</a>
-  &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/mohamed-elgarouani">LinkedIn</a>
-  &nbsp;·&nbsp;
-  <a href="mailto:elgarouani01@gmail.com">elgarouani01@gmail.com</a>
-  <br/><br/>
   <sub><code>"Trust The Process"</code></sub>
 </div>
